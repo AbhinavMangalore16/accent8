@@ -1,0 +1,1 @@
+export const MAX_LIMIT_FREE=5000;

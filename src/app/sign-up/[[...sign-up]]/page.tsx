@@ -1,0 +1,16 @@
+import { SignUp } from '@clerk/nextjs'
+
+export default function Page() {
+  return (
+    <div className='flex min-h-screen items-center justify-center bg-background px-4'>
+      <SignUp 
+        appearance={{
+          elements: {
+            rootBox: "w-full flex justify-center",
+            card: "shadow-xl"
+          }
+        }}
+      />
+    </div>
+  )
+}
