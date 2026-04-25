@@ -1,19 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; 
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import { Toaster } from "@/components/ui/sonner";
 import { ClerkProvider } from "@clerk/nextjs";
-
+import { TRPCReactProvider } from "@/trpc/client";
 
 const inter = Inter({
-  subsets: ["latin"],
   variable: "--font-sans",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Accent8",
-  description: "The complete spectrum of neural speech.",
+  title: "Accent8.ai | Voices with Soul",
+  description: "The India-First high-fidelity Text-to-Speech platform.",
 };
 
 export default function RootLayout({
@@ -23,17 +21,15 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-    <html lang="en" className={cn("h-full light", inter.variable)}>
-      <body 
-        className={cn(
-          "min-h-full flex flex-col antialiased font-sans", 
-          inter.className 
-        )}
-      >
-        {children}
-        <Toaster/>
-      </body>
-    </html>
+      <TRPCReactProvider>
+      <html lang="en">
+        <body
+          className={`${inter.variable} antialiased`}
+        >
+          {children}
+        </body>
+      </html>
+      </TRPCReactProvider>
     </ClerkProvider>
   );
 }

@@ -39,13 +39,13 @@ interface NavItem {
 interface NavigationSectionProps {
   label?: string;
   items: NavItem[];
-  pathname: string;
+  activeUrl?: string;
 }
 
 export function NavigationSection({
   label,
   items,
-  pathname,
+  activeUrl,
 }: NavigationSectionProps) {
   return (
     <SidebarGroup>
@@ -58,11 +58,7 @@ export function NavigationSection({
       <SidebarGroupContent>
         <SidebarMenu>
           {items.map((item) => {
-            const isActive = item.url
-              ? item.url === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.url)
-              : false;
+            const isActive = item.url ? item.url === activeUrl : false;
 
             return (
               <SidebarMenuItem key={item.title}>
@@ -110,7 +106,7 @@ export function DashboardSidebar() {
     },
     {
       title: "Text-to-Speech",
-      url: "/dashboard/tts",
+      url: "/dashboard/tts-feature",
       icon: AudioLines,
     },
     {
@@ -130,9 +126,16 @@ export function DashboardSidebar() {
       icon: Headphones,
     },
   ];
+
+  const activeUrl = [...navigationItems, ...miscItem]
+    .map((item) => item.url)
+    .filter((url): url is string => Boolean(url && url.startsWith("/")))
+    .filter((url) => pathname === url || pathname.startsWith(`${url}/`))
+    .sort((a, b) => b.length - a.length)[0];
+
   return (
     <Sidebar collapsible="icon" className="flex flex-col h-full">
-        <SidebarHeader className="flex flex-col gap-4 pt-6 pl-3 group-data-[collapsible=icon]:pl-0 group-data-[collapsible=icon]:items-center group-data-[collapsible=icon]:pl-0">
+        <SidebarHeader className="flex flex-col gap-4 pt-6 pl-3 group-data-[collapsible=icon]:items-center group-data-[collapsible=icon]:pl-0">
             <Link href="/dashboard" className="flex items-center gap-3 transition-opacity hover:opacity-80">
                 <Image 
                 src="/Accent8-wbg.png" 
@@ -190,8 +193,8 @@ export function DashboardSidebar() {
             </SidebarHeader>
 
             <SidebarContent>
-                <NavigationSection items={navigationItems} pathname={pathname}/>
-                <NavigationSection label="Others" items={miscItem} pathname={pathname}/>
+              <NavigationSection items={navigationItems} activeUrl={activeUrl} />
+              <NavigationSection label="Others" items={miscItem} activeUrl={activeUrl} />
             </SidebarContent>
 
                 <SidebarFooter className="gap-3 py-3">
