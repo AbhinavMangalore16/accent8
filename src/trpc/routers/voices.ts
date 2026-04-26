@@ -65,7 +65,13 @@ export const voicesRouter = createTRPCRouter({
         });
         if (voice.s3ObjectKey){
             const { deleteAudioFromS3 } = await import("@/lib/s3_bucket");
-            await deleteAudioFromS3(voice.s3ObjectKey).catch(()=>{});
+            await deleteAudioFromS3(voice.s3ObjectKey).catch((err) => {
+                console.error("Failed to delete S3 object for voice", {
+                    voiceId: voice.id,
+                    s3ObjectKey: voice.s3ObjectKey,
+                    err,
+                });
+            });;
         }  //TODO: handle error case where audio file could not be deleted from S3, currently we just ignore it; scanning cron job to clean up orphaned files could be a solution
         return {success: true};
     })

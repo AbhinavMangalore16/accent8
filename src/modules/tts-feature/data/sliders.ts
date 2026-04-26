@@ -33,7 +33,7 @@ export const sliders : Slider[] =[
         label: "Expression Range",
         leftLabel: "Subtle",
         rightLabel: "Dramatic",
-        min: 1,
+        min: 0,
         max: 10000,
         step: 100,
         defaultValue: 1000,

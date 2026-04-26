@@ -54,10 +54,15 @@ export function TTSSelections() {
 	const selectedVoice = allVoices.find((voice) => voice.id === selectedVoiceId);
 
 	useEffect(() => {
+        if (!data) return; 
 		if (selectedVoice && selectedVoiceName !== selectedVoice.name) {
 			form.setFieldValue("voiceName", selectedVoice.name);
 		}
-	}, [form, selectedVoice, selectedVoiceName]);
+        else if (!selectedVoice && selectedVoiceId) {
+			form.setFieldValue("voiceId", "");
+			form.setFieldValue("voiceName", "");
+ 		}
+	}, [form, data, selectedVoice, selectedVoiceId, selectedVoiceName]);
 
 	return (
 		<form.Field
