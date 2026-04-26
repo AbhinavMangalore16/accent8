@@ -2,7 +2,6 @@ import z from "zod";
 import { createTRPCRouter, orgProcedure } from "../init";
 import { prisma } from "@/lib/db";
 import { TRPCError } from "@trpc/server";
-import { deleteAudioFromS3 } from "@/lib/s3_bucket";
 
 
 
@@ -65,6 +64,7 @@ export const voicesRouter = createTRPCRouter({
             where: {id: voice.id},
         });
         if (voice.s3ObjectKey){
+            const { deleteAudioFromS3 } = await import("@/lib/s3_bucket");
             await deleteAudioFromS3(voice.s3ObjectKey).catch(()=>{});
         }  //TODO: handle error case where audio file could not be deleted from S3, currently we just ignore it; scanning cron job to clean up orphaned files could be a solution
         return {success: true};
