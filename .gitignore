@@ -46,3 +46,9 @@ next-env.d.ts
 /src/generated/prisma
 
 /src/generated/prisma
+.agents/
+#systemic canon voices
+data/basic/
+data/showcase/
+data/premium/
+data/seed/basic/

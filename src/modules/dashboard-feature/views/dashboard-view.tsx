@@ -7,9 +7,9 @@ import { TipsPanel } from "../components/tips-panel";
 
 export function DashboardView(){
     return(
-        <div className="relative isolate">
+        <div className="relative isolate min-h-full overflow-y-auto">
             <SiteHeader title="Dashboard" className="lg:hidden"/>
-            <DashboardWaves/>
+            {/* <DashboardWaves/> */}
             <div className="relative z-10 space-y-8 p-4 lg:p-16">
                 <DashboardHeader/>
                 <InputBox/>
