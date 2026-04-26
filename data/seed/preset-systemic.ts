@@ -5,8 +5,9 @@ import { PutObjectCommand, S3Client, type PutObjectCommandInput} from "@aws-sdk/
 import { z } from "zod";
 import { fileURLToPath } from "node:url";
 import { PrismaPg } from "@prisma/adapter-pg";
-import { PrismaClient, VoiceCategory } from "@/generated/prisma/client";
+
 import { PRESET_VOICE_NAMES } from "@/modules/voices-feature/data/config";
+import { PrismaClient } from "@/generated/prisma/client";
 
 
 interface VoiceMetadata{
