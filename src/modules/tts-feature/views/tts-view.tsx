@@ -4,14 +4,15 @@ import { SiteHeader } from "@/components/custom/site-header";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { TTSFormProvider } from "../components/tts-form-context";
+import { TTSFormValues } from "../data/form";
 import { TTSInputArea } from "../components/tts-input-area";
 import { TTSAudioPreview } from "../components/tts-audio-preview";
 import { TTSSettingsSidebar } from "../components/tts-settings-sidebar";
 import { SlidersHorizontal } from "lucide-react";
 
-export function TTSView() {
+export function TTSView({ defaultValues }: { defaultValues?: Partial<TTSFormValues> }) {
   return (
-    <TTSFormProvider>
+    <TTSFormProvider defaultValues={defaultValues}>
       <div className="flex h-full min-h-0 flex-col overflow-hidden bg-background">
         <SiteHeader title="Text to speech" className="lg:hidden" />
 
