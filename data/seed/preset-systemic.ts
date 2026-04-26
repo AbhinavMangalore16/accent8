@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 import { PrismaPg } from "@prisma/adapter-pg";
 
 import { PRESET_VOICE_NAMES } from "@/modules/voices-feature/data/config";
-import { PrismaClient } from "@/generated/prisma/client";
+import { PrismaClient, VoiceCategory } from "@/generated/prisma/client";
 
 
 interface VoiceMetadata{
