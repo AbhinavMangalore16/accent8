@@ -29,6 +29,7 @@ export function TipsPanel(){
             audio.pause()
             audio.src = previewUrl
             audio.currentTime = 0
+            audio.load()
         }
 
         try {
@@ -69,7 +70,8 @@ export function TipsPanel(){
             </div>
             <audio
                 ref={audioRef}
-                preload="none"
+                preload="metadata"
+                crossOrigin="anonymous"
                 onEnded={handleAudioEnded}
             />
         </div>

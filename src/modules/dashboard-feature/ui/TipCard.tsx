@@ -11,7 +11,7 @@ import { Tip, TipIcon } from "../data/tips";
 type TipCardProps = Pick<Tip, "title" | "description" | "icon" | "gradient" | "href" | "animationData"> & {
   isPlaying: boolean;
   canPlay: boolean;
-  onTogglePlay: () => void;
+  onTogglePlay: () => Promise<void> | void;
 };
 
 const iconMap: Record<TipIcon, React.ComponentType<{ className?: string }>> = {
@@ -37,6 +37,10 @@ export function TipCard({
   const lottieRef = useRef<LottieRefCurrentProps>(null);
   const Icon = iconMap[icon] ?? Mic2;
   const [isHovered, setIsHovered] = useState(false);
+  const hasValidAnimationData =
+    typeof animationData === "object" &&
+    animationData !== null &&
+    Array.isArray((animationData as { layers?: unknown[] }).layers);
 
   useEffect(() => {
     lottieRef.current?.goToAndStop(0, true);
@@ -55,7 +59,9 @@ export function TipCard({
 
   const handleMouseEnter = () => {
     setIsHovered(true);
-    lottieRef.current?.play();
+    if (hasValidAnimationData) {
+      lottieRef.current?.play();
+    }
   };
 
   const handleMouseLeave = () => {
@@ -79,18 +85,24 @@ export function TipCard({
         <div className={cn("pointer-events-none absolute inset-0 bg-linear-to-br opacity-35", gradient ?? "from-slate-400 to-slate-500")} />
         <div className={cn("pointer-events-none absolute -inset-px rounded-xl bg-linear-to-br opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-45", gradient ?? "from-slate-300 to-slate-500")} />
 
-        <Lottie
-          lottieRef={lottieRef}
-          animationData={animationData}
-          loop={false}
-          autoplay={false}
-          className="relative z-10 h-20 w-20"
-        />
+        {hasValidAnimationData ? (
+          <Lottie
+            lottieRef={lottieRef}
+            animationData={animationData}
+            loop={false}
+            autoplay={false}
+            className="relative z-10 h-20 w-20"
+          />
+        ) : (
+          <Icon className="relative z-10 h-10 w-10 text-white/70" />
+        )}
 
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <button
             type="button"
-            onClick={onTogglePlay}
+            onClick={() => {
+              void onTogglePlay();
+            }}
             disabled={!canPlay}
             aria-label={isPlaying ? `Stop preview for ${title}` : `Play preview for ${title}`}
             className={cn(

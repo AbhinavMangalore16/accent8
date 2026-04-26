@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { TRPCReactProvider } from "@/trpc/client";
+import { AgeGateProvider } from "../../providers/AgeGuardrail";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -10,8 +11,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Accent8.ai | Voices with Soul",
+  title: "Accent8 | Voices with Soul",
   description: "The India-First high-fidelity Text-to-Speech platform.",
+  icons: {
+    icon: [{ url: "/Accent8-wbg.png", type: "image/png" }],
+    shortcut: ["/Accent8-wbg.png"],
+    apple: ["/Accent8-wbg.png"],
+  },
 };
 
 export default function RootLayout({
@@ -22,6 +28,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <TRPCReactProvider>
+        <AgeGateProvider>
       <html lang="en">
         <body
           className={`${inter.variable} antialiased`}
@@ -29,6 +36,7 @@ export default function RootLayout({
           {children}
         </body>
       </html>
+      </AgeGateProvider>
       </TRPCReactProvider>
     </ClerkProvider>
   );
