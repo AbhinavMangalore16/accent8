@@ -7,7 +7,12 @@ export function WavyBackground() {
   const [success, setSuccess] = useState(false);
 
   return (
-    <div className="relative w-full aspect-video md:aspect-21/9 bg-[#FAFAFA] rounded-[32px] overflow-hidden border border-slate-200/80 flex flex-col items-center justify-center p-8">
+    <div className="relative w-full 
+                bg-[#FAFAFA] 
+                rounded-[32px] 
+                border border-slate-200/80 
+                flex flex-col items-center justify-center 
+                p-8">
       
       {/* Background */}
       <div className="absolute inset-0 opacity-10">
@@ -34,10 +39,15 @@ export function WavyBackground() {
             setSuccess(true);
           }, 1200);
         }}
-        className="relative z-10 w-full max-w-2xl bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 space-y-4"
+        className="relative z-10 w-full max-w-2xl mx-auto 
+                  bg-white 
+                  p-4 sm:p-6 md:p-8 
+                  rounded-xl sm:rounded-2xl 
+                  shadow-sm border border-slate-200/60 
+                  space-y-4 sm:space-y-5"
       >
-        <h3 className="text-lg font-semibold text-slate-900">
-        Join Beta Access
+        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-900">
+          Join Beta Access
         </h3>
 
         <input
@@ -45,22 +55,35 @@ export function WavyBackground() {
           name="email"
           required
           placeholder="Your email"
-          className="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none focus:ring-2 focus:ring-slate-900"
+          className="w-full px-3 sm:px-4 py-3 
+                    text-sm sm:text-base 
+                    rounded-lg border border-slate-200 
+                    outline-none 
+                    focus:ring-2 focus:ring-slate-900"
         />
 
         <textarea
           name="message"
           required
           placeholder="What would you use this for? (optional but helps)"
-          className="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none resize-none h-24"
+          className="w-full px-3 sm:px-4 py-3 
+                    text-sm sm:text-base 
+                    rounded-lg border border-slate-200 
+                    outline-none resize-none 
+                    h-24 sm:h-28"
         />
 
-        {/* Voice selector repurposed as interest tags */}
+        {/* Interest tags */}
         <div className="flex flex-wrap gap-2">
           {["TTS", "Voice Cloning", "Agents", "Content", "Startup", "Research"].map(tag => (
             <label
               key={tag}
-              className="px-3 py-1 text-xs rounded-full border border-slate-200 cursor-pointer hover:bg-slate-100"
+              className="px-3 py-2 sm:py-1.5 
+                        text-xs sm:text-sm 
+                        rounded-full border border-slate-200 
+                        cursor-pointer 
+                        hover:bg-slate-100 
+                        active:scale-95 transition"
             >
               <input type="checkbox" name="interest" value={tag} className="hidden" />
               {tag}
@@ -71,7 +94,13 @@ export function WavyBackground() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-3 bg-slate-900 text-white rounded-xl font-medium hover:bg-slate-800 transition-colors"
+          className="w-full py-3 sm:py-3.5 
+                    text-sm sm:text-base 
+                    bg-slate-900 text-white 
+                    rounded-xl font-medium 
+                    hover:bg-slate-800 
+                    active:scale-[0.98] 
+                    transition-all"
         >
           {loading ? "Submitting..." : success ? "You're in 🚀" : "Request Beta Access"}
         </button>
