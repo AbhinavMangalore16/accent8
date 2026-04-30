@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { Moon, Sun } from "lucide-react";
 
 interface Testimonial {
   text: string;
@@ -112,10 +111,10 @@ function TestimonialsColumn(props: {
                     "0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05)",
                   transition: { type: "spring", stiffness: 400, damping: 17 },
                 }}
-                className="group w-full max-w-xs cursor-default select-none rounded-3xl border border-neutral-200 bg-white p-10 shadow-lg shadow-black/5 transition-all duration-300 focus:ring-2 focus:ring-primary/30 focus:outline-none dark:border-neutral-800 dark:bg-neutral-900"
+                className="group w-full max-w-xs cursor-default select-none rounded-3xl border border-neutral-200 bg-white p-10 shadow-lg shadow-black/5 transition-all duration-300 focus:ring-2 focus:ring-primary/30 focus:outline-none"
               >
                 <blockquote className="m-0 p-0">
-                  <p className="m-0 leading-relaxed font-normal text-neutral-600 transition-colors duration-300 dark:text-neutral-400">
+                  <p className="m-0 leading-relaxed font-normal text-neutral-600 transition-colors duration-300">
                     {text}
                   </p>
                   <footer className="mt-6 flex items-center gap-3">
@@ -124,13 +123,13 @@ function TestimonialsColumn(props: {
                       height={40}
                       src={image}
                       alt={`Avatar of ${name}`}
-                      className="h-10 w-10 rounded-full object-cover ring-2 ring-neutral-100 transition-all duration-300 ease-in-out group-hover:ring-primary/30 dark:ring-neutral-800"
+                      className="h-10 w-10 rounded-full object-cover ring-2 ring-neutral-100 transition-all duration-300 ease-in-out group-hover:ring-primary/30"
                     />
                     <div className="flex flex-col">
-                      <cite className="not-italic leading-5 font-semibold tracking-tight text-neutral-900 transition-colors duration-300 dark:text-white">
+                      <cite className="not-italic leading-5 font-semibold tracking-tight text-neutral-900 transition-colors duration-300">
                         {name}
                       </cite>
-                      <span className="mt-0.5 text-sm leading-5 tracking-tight text-neutral-500 transition-colors duration-300 dark:text-neutral-500">
+                      <span className="mt-0.5 text-sm leading-5 tracking-tight text-neutral-500 transition-colors duration-300">
                         {role}
                       </span>
                     </div>
@@ -164,18 +163,18 @@ function TestimonialsSection() {
       >
         <div className="mx-auto mb-16 flex max-w-135 flex-col items-center justify-center">
           <div className="flex justify-center">
-            <div className="rounded-full border border-neutral-300 bg-neutral-100/50 px-4 py-1 text-xs font-semibold tracking-wide text-neutral-600 uppercase transition-colors dark:border-neutral-700 dark:bg-neutral-800/50 dark:text-neutral-400">
+            <div className="rounded-full border border-neutral-300 bg-neutral-100/50 px-4 py-1 text-xs font-semibold tracking-wide text-neutral-600 uppercase transition-colors">
               Testimonials
             </div>
           </div>
 
           <h2
             id="testimonials-heading"
-            className="mt-6 text-center text-4xl font-extrabold tracking-tight text-neutral-900 transition-colors md:text-5xl dark:text-white"
+            className="mt-6 text-center text-4xl font-extrabold tracking-tight text-neutral-900 transition-colors md:text-5xl"
           >
             What our users say
           </h2>
-          <p className="mt-5 max-w-sm text-center text-lg leading-relaxed text-neutral-500 transition-colors dark:text-neutral-400">
+          <p className="mt-5 max-w-sm text-center text-lg leading-relaxed text-neutral-500 transition-colors">
             Discover how thousands of teams streamline their operations with our platform.
           </p>
         </div>
@@ -195,26 +194,8 @@ function TestimonialsSection() {
 }
 
 export default function TestimonialV2() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [isDark]);
-
   return (
-    <div className="relative flex min-h-screen w-screen flex-col justify-center bg-white transition-colors duration-300 selection:bg-primary selection:text-white dark:bg-neutral-950">
-      <button
-        onClick={() => setIsDark(!isDark)}
-        className="fixed top-6 right-6 z-50 rounded-full border border-neutral-200 bg-white p-3 text-neutral-800 shadow-xl transition-all hover:scale-110 active:scale-95 focus:ring-2 focus:ring-primary/50 focus:outline-none dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100"
-        aria-label="Toggle Dark Mode"
-      >
-        {isDark ? <Sun size={20} /> : <Moon size={20} />}
-      </button>
-
+    <div className="relative flex min-h-screen w-screen flex-col justify-center bg-white transition-colors duration-300 selection:bg-primary selection:text-white">
       <TestimonialsSection />
     </div>
   );

@@ -1,13 +1,16 @@
 "use client";
+import { useStore } from "@tanstack/react-form";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Coins, Loader2 } from "lucide-react";
-import { useTTSForm } from "./tts-form-context";
+import { useTypedAppFormContext } from "@/hooks/use-app-form";
 import { COST_PER_1000, MAX_LIMIT_FREE } from "../data/constant";
+import { defaultTTSValues } from "../data/form";
 
 export function TTSInputArea() {
-  const form = useTTSForm();
+  const form = useTypedAppFormContext({ defaultValues: defaultTTSValues });
+  const isSubmitting = useStore(form.store, (s) => s.isSubmitting);
 
   return (
     <div className="flex h-full flex-col rounded-xl border bg-card text-card-foreground shadow-sm">
@@ -57,27 +60,25 @@ export function TTSInputArea() {
                   )}
                 </div>
 
-                <form.Subscribe
-                  selector={(state) => [state.canSubmit, state.isSubmitting]}
-                  children={([canSubmit, isSubmitting]) => (
-                    <Button
-                      type="button" // form submission is triggered manually or by context wrapping
-                      size="default"
-                      disabled={!canSubmit || isSubmitting || isOverLimit || isEmpty}
-                      onClick={() => form.handleSubmit()}
-                      className="min-w-30 transition-all"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                          Generating...
-                        </>
-                      ) : (
-                        "Generate"
-                      )}
-                    </Button>
+                <Button
+                  type="button" // form submission is triggered manually or by context wrapping
+                  size="default"
+                  disabled={isSubmitting || isOverLimit || isEmpty}
+                  onClick={() => {
+                    console.log("Generate button clicked");
+                    form.handleSubmit();
+                  }}
+                  className="min-w-30 transition-all"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Generating...
+                    </>
+                  ) : (
+                    "Generate"
                   )}
-                />
+                </Button>
               </div>
             </>
           );
