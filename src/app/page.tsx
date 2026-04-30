@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useMotionTemplate, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Sparkles, MapPin, Check, X, AudioLines } from "lucide-react";
+import { ArrowRight, Sparkles, MapPin, Check, X, AudioLines, Menu, X as CloseIcon } from "lucide-react";
 import { Marquee } from "@/components/landing/marquee";
 import { BouncyCardsFeatures } from "@/components/landing/bouncy-cards-features";
 import { WavyBackground } from "@/components/landing/wavy-background";
@@ -12,30 +12,129 @@ import VoiceLab from "@/modules/landing-showcase/VoiceLab";
 import { MacbookScroll } from "@/components/ui/macbook-scroll";
 
 export default function LandingPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-slate-900 font-sans selection:bg-slate-200">
       {/* HEADER */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg overflow-hidden border border-slate-200 bg-white shadow-sm">
-              <img
-                src="/Accent8-wbg.png"
-                alt="Accent8 logo"
-                className="h-full w-full object-contain"
-              />
-            </div>
-            <span className="font-bold text-xl tracking-tight">Accent8</span>
+          
+          {/* Left: Logo */}
+          <div className="flex items-center gap-3 flex-1">
+            <img
+              src="/logo/accent8-text-logo.png"
+              alt="Accent8 logo"
+              className="w-36 h-36 object-contain translate-y-px"
+            />
           </div>
-          <nav className="flex items-center gap-4 text-sm font-medium">
+
+          {/* Center: Navigation Links - Desktop Only */}
+          <nav className="hidden md:flex items-center justify-center gap-2 md:gap-8 text-sm font-medium">
+            <a href="#features" className="text-slate-600 hover:text-slate-900 transition-colors">
+              Features
+            </a>
+            <a href="#dashboard" className="text-slate-600 hover:text-slate-900 transition-colors">
+              Labs
+            </a>
+            <a href="#billing" className="text-slate-600 hover:text-slate-900 transition-colors">
+              Billing
+            </a>
+            <a href="#testimonials" className="text-slate-600 hover:text-slate-900 transition-colors">
+              Testimonials
+            </a>
+            <a href="#testimonials" className="text-slate-600 hover:text-slate-900 transition-colors">
+              Beta✦ 
+            </a>
+          </nav>
+
+          {/* Right: Auth Buttons - Desktop Only */}
+          <div className="hidden md:flex items-center justify-end gap-4 text-sm font-medium flex-1">
             <Link href="/sign-in" className="text-slate-600 hover:text-slate-900 transition-colors">
               Log in
             </Link>
             <Link href="/sign-up" className="px-4 py-2 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition-colors">
               Sign up
             </Link>
-          </nav>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? (
+              <CloseIcon className="w-6 h-6 text-slate-900" />
+            ) : (
+              <Menu className="w-6 h-6 text-slate-900" />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: isMenuOpen ? 1 : 0, height: isMenuOpen ? "auto" : 0 }}
+          transition={{ duration: 0.3 }}
+          className="md:hidden overflow-hidden border-t border-slate-200/80"
+        >
+          <nav className="flex flex-col gap-4 px-6 py-4 bg-white/50 backdrop-blur-md">
+            <a
+              href="#features"
+              onClick={closeMenu}
+              className="text-slate-600 hover:text-slate-900 transition-colors py-2 font-medium"
+            >
+              Features
+            </a>
+            <a
+              href="#dashboard"
+              onClick={closeMenu}
+              className="text-slate-600 hover:text-slate-900 transition-colors py-2 font-medium"
+            >
+              Experimental
+            </a>
+            <a
+              href="#billing"
+              onClick={closeMenu}
+              className="text-slate-600 hover:text-slate-900 transition-colors py-2 font-medium"
+            >
+              Billing
+            </a>
+            <a
+              href="#testimonials"
+              onClick={closeMenu}
+              className="text-slate-600 hover:text-slate-900 transition-colors py-2 font-medium"
+            >
+              Testimonials
+            </a>
+            <a
+              href="#testimonials"
+              onClick={closeMenu}
+              className="text-slate-600 hover:text-slate-900 transition-colors py-2 font-medium"
+            >
+              Beta Access✦
+            </a>
+            <div className="border-t border-slate-200/80 pt-4 mt-2 flex flex-col gap-3">
+              <Link
+                href="/sign-in"
+                onClick={closeMenu}
+                className="text-slate-600 hover:text-slate-900 transition-colors py-2 font-medium"
+              >
+                Log in
+              </Link>
+              <Link
+                href="/sign-up"
+                onClick={closeMenu}
+                className="px-4 py-2 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition-colors text-center font-medium"
+              >
+                Sign up
+              </Link>
+            </div>
+          </nav>
+        </motion.div>
       </header>
 
       <main className="pt-16 overflow-hidden">
@@ -109,7 +208,9 @@ export default function LandingPage() {
         </section>
 
         {/* 4. FEATURES BENTO */}
+        <div id="features" className="scroll-mt-24">
         <BouncyCardsFeatures />
+        </div>
 
         {/* 5. VOICE EXPERIMENTALS */}
           

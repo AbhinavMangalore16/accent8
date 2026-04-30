@@ -135,19 +135,20 @@ export function DashboardSidebar() {
 
   return (
     <Sidebar collapsible="icon" className="flex flex-col h-full">
-        <SidebarHeader className="flex flex-col gap-4 pt-6 pl-3 group-data-[collapsible=icon]:items-center group-data-[collapsible=icon]:pl-0">
-            <Link href="/dashboard" className="flex items-center gap-3 transition-opacity hover:opacity-80">
-                <Image 
-                src="/Accent8-wbg.png" 
-                alt="Accent8"  
-                width={72} 
-                height={72} 
-                className="rounded-md object-contain"
-                />
-                <span className="group-data-[collapsible=icon]:hidden font-extrabold text-2xl tracking-tighter text-foreground whitespace-nowrap">
-                Accent8
-                </span>
-            </Link>
+      <SidebarHeader className="flex flex-col gap-4 pt-6 px-3 items-center">
+        <Link 
+          href="/dashboard" 
+          className="flex justify-center w-full transition-opacity hover:opacity-80
+                    group-data-[collapsible=icon]:w-auto"
+        >
+          <Image 
+            src="/logo/accent8-text-logo.png" 
+            alt="Accent8"  
+            width={200} 
+            height={140} 
+            className="object-contain -translate-x-2.5 group-data-[collapsible=icon]:translate-x-0"
+          />
+        </Link>
             <SidebarMenu>
                 <SidebarMenuItem className="group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:items-center group-data-[collapsible=icon]:justify-center">
                     <OrganizationSwitcher

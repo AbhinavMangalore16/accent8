@@ -4,7 +4,13 @@ import gradientManim3 from "../../../../public/animations/gradientManim3.json";
 import gradientManim4 from "../../../../public/animations/gradientManim4.json";
 import gradientManim5 from "../../../../public/animations/gradientManim5.json";
 
-export type TipIcon = "mic2" | "languages" | "zap" | "audioLines" | "heart" | "sliders";
+export type TipIcon =
+  | "bookOpen"      
+  | "megaphone"     
+  | "heart"       
+  | "audioLines"      
+  | "languages"        
+  | "podcast";      
 
 export type VoiceOption = {
   id: string;
@@ -34,7 +40,7 @@ export const tips: Tip[] = [
   {
     title: "Narrate a Story",
     description: "Immersive storytelling with cinematic warmth.",
-    icon: "mic2",
+    icon: "bookOpen",
     gradient: "from-[#E4DBF4] to-[#8645FF]",
     text: "Once upon a time, in a quiet village, there lived a dreamer who believed in magic.",
     animationData: gradientManim3,
@@ -47,7 +53,7 @@ export const tips: Tip[] = [
   {
     title: "Promotional Ads",
     description: "Clear and articulate voices that drive conversions.",
-    icon: "zap",
+    icon: "megaphone",
     gradient: "from-[#F4EADB] to-[#C4C7AD]",
     text: "Introducing Gamut AI — fast, natural, and starting at just ₹1/min.",
     animationData: gradientManim,
@@ -100,7 +106,7 @@ export const tips: Tip[] = [
   {
     title: "Documentary & Podcast",
     description: "Host-ready versatile voices for your next big episode.",
-    icon: "sliders",
+    icon: "podcast",
     gradient: "from-blue-500 to-indigo-600",
     text: "Welcome back to the show. Today, we're diving deep into the future of AI.",
     animationData: gradientManim5,
