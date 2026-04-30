@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ArrowRight, AudioLines, Heart, Languages, Mic2, Play, Sliders, Square, Zap } from "lucide-react";
+import { ArrowRight, AudioLines, BookOpen, Headset, Heart, Languages, Megaphone, Mic2, Play, Podcast, Sliders, Sparkles, Square, Zap } from "lucide-react";
 import Link from "next/link";
 import Lottie, { type LottieRefCurrentProps } from "lottie-react";
 import { useEffect, useRef, useState } from "react";
@@ -15,12 +15,12 @@ type TipCardProps = Pick<Tip, "title" | "description" | "icon" | "gradient" | "h
 };
 
 const iconMap: Record<TipIcon, React.ComponentType<{ className?: string }>> = {
-  mic2: Mic2,
-  languages: Languages,
-  zap: Zap,
-  audioLines: AudioLines,
+  bookOpen: BookOpen,
+  megaphone: Megaphone,
   heart: Heart,
-  sliders: Sliders,
+  audioLines: AudioLines,
+  languages: Languages,
+  podcast: Podcast,
 };
 
 export function TipCard({
