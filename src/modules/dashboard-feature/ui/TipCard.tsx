@@ -2,25 +2,32 @@
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ArrowRight, AudioLines, Heart, Languages, Mic2, Play, Sliders, Square, Zap } from "lucide-react";
+import { ArrowRight, AudioLines, BookOpen, Headset, Heart, Languages, Megaphone, Mic2, Play, Podcast, Sliders, Sparkles, Square, Zap } from "lucide-react";
 import Link from "next/link";
 import Lottie, { type LottieRefCurrentProps } from "lottie-react";
 import { useEffect, useRef, useState } from "react";
 import { Tip, TipIcon } from "../data/tips";
 
-type TipCardProps = Pick<Tip, "title" | "description" | "icon" | "gradient" | "href" | "animationData"> & {
+// Extended icon type to support both dashboard and landing-showcase icons
+type ExtendedTipIcon = TipIcon | "mic2" | "sliders" | "zap";
+
+type TipCardProps = Omit<Pick<Tip, "title" | "description" | "gradient" | "href" | "animationData">, never> & {
+  icon: ExtendedTipIcon;
   isPlaying: boolean;
   canPlay: boolean;
   onTogglePlay: () => Promise<void> | void;
 };
 
-const iconMap: Record<TipIcon, React.ComponentType<{ className?: string }>> = {
-  mic2: Mic2,
-  languages: Languages,
-  zap: Zap,
-  audioLines: AudioLines,
+const iconMap: Record<ExtendedTipIcon, React.ComponentType<{ className?: string }>> = {
+  bookOpen: BookOpen,
+  megaphone: Megaphone,
   heart: Heart,
+  audioLines: AudioLines,
+  languages: Languages,
+  podcast: Podcast,
+  mic2: Mic2,
   sliders: Sliders,
+  zap: Zap,
 };
 
 export function TipCard({

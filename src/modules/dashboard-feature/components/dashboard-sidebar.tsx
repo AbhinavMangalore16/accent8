@@ -17,9 +17,12 @@ import {
 import {
   AudioLines,
   AudioWaveform,
+  CreditCard,
   Headphones,
   LayoutDashboard,
   LucideIcon,
+  MessageSquare,
+  MessagesSquare,
   Settings,
   Speech,
 } from "lucide-react";
@@ -113,6 +116,10 @@ export function DashboardSidebar() {
       title: "Clone your voice",
       icon: AudioWaveform,
     },
+    {
+      title: "Multi-turn Convo",
+      icon: MessagesSquare,
+    },
   ];
   const miscItem: NavItem[] = [
     {
@@ -124,6 +131,11 @@ export function DashboardSidebar() {
       title: "Queries & Support",
       url: "mailto:abhinavm16104@gmail.com",
       icon: Headphones,
+    },
+        {
+      title: "Usage & Billing",
+      url: "mailto:abhinavm16104@gmail.com",
+      icon: CreditCard,
     },
   ];
 
