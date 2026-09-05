@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "modal": {
+      "source": "modal-labs/modal-client",
+      "sourceType": "github",
+      "skillPath": "py/modal/skills/modal/SKILL.md",
+      "computedHash": "4b2fd45f86759d816d2311b1115e85cee1920784fe8532e6fbbde9fdc3673da6"
+    }
+  }
+}

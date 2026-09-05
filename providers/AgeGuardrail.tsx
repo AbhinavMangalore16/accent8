@@ -54,7 +54,8 @@ export function AgeGateProvider({ children }: { children: React.ReactNode }) {
               🔞 Age Restricted
             </h2>
             <p className="text-white/70 mb-6">
-              This content may contain explicit/profane audio. Are you 18 or older?
+              This content may contain explicit/profane audio. Are you 18 or
+              older?
             </p>
 
             <div className="flex gap-4 justify-center">

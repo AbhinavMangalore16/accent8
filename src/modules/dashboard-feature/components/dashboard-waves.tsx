@@ -1,6 +1,5 @@
 import { WavyBackground } from "@/components/ui/wavy-background";
 
-
 export function DashboardWaves() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">

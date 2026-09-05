@@ -1,11 +1,12 @@
-import { createTRPCRouter } from '../init';
-import { voicesRouter } from './voices';
-import { ttsRouter } from './tts';
- 
+import { createTRPCRouter } from "../init";
+import { voicesRouter } from "./voices";
+import { ttsRouter } from "./tts";
+import { convoRouter } from "./convo";
+
 export const appRouter = createTRPCRouter({
   voices: voicesRouter,
   tts: ttsRouter,
+  convo: convoRouter,
 });
- 
-// export type definition of API
+
 export type AppRouter = typeof appRouter;

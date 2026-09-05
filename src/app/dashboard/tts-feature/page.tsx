@@ -2,28 +2,28 @@ import { TTSView } from "@/modules/tts-feature/views/tts-view";
 import { HydrateClient, prefetch, trpc } from "@/trpc/server";
 
 type TTSFeatureSearchParams = Promise<{
-    text?: string | string[];
-    voiceId?: string | string[];
+  text?: string | string[];
+  voiceId?: string | string[];
 }>;
 
 function firstValue(value: string | string[] | undefined) {
-    return Array.isArray(value) ? value[0] : value;
+  return Array.isArray(value) ? value[0] : value;
 }
 
 export default async function TTSFeaturePage({
-    searchParams,
+  searchParams,
 }: {
-    searchParams: TTSFeatureSearchParams;
+  searchParams: TTSFeatureSearchParams;
 }) {
-    prefetch(trpc.voices.getAll.queryOptions());
+  prefetch(trpc.voices.getAll.queryOptions());
 
-    const resolvedSearchParams = await searchParams;
-    const text = firstValue(resolvedSearchParams.text) ?? "";
-    const voiceId = firstValue(resolvedSearchParams.voiceId) ?? "";
+  const resolvedSearchParams = await searchParams;
+  const text = firstValue(resolvedSearchParams.text) ?? "";
+  const voiceId = firstValue(resolvedSearchParams.voiceId) ?? "";
 
-    return (
-        <HydrateClient>
-            <TTSView defaultValues={{ text, voiceId }} />
-        </HydrateClient>
-    )
+  return (
+    <HydrateClient>
+      <TTSView defaultValues={{ text, voiceId }} />
+    </HydrateClient>
+  );
 }

@@ -1,9 +1,23 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useMotionTemplate, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionTemplate,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Sparkles, MapPin, Check, X, AudioLines, Menu, X as CloseIcon } from "lucide-react";
+import {
+  ArrowRight,
+  Sparkles,
+  MapPin,
+  Check,
+  X,
+  AudioLines,
+  Menu,
+  X as CloseIcon,
+} from "lucide-react";
 import { Marquee } from "@/components/landing/marquee";
 import { BouncyCardsFeatures } from "@/components/landing/bouncy-cards-features";
 import { WavyBackground } from "@/components/landing/wavy-background";
@@ -21,7 +35,6 @@ export default function LandingPage() {
       {/* HEADER */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-          
           {/* Left: Logo */}
           <div className="flex items-center gap-3 flex-1">
             <img
@@ -33,29 +46,50 @@ export default function LandingPage() {
 
           {/* Center: Navigation Links - Desktop Only */}
           <nav className="hidden md:flex items-center justify-center gap-2 md:gap-8 text-sm font-medium">
-            <a href="#features" className="text-slate-600 hover:text-slate-900 transition-colors">
+            <a
+              href="#features"
+              className="text-slate-600 hover:text-slate-900 transition-colors"
+            >
               Features
             </a>
-            <a href="#dashboard" className="text-slate-600 hover:text-slate-900 transition-colors">
+            <a
+              href="#dashboard"
+              className="text-slate-600 hover:text-slate-900 transition-colors"
+            >
               Labs
             </a>
-            <a href="#billing" className="text-slate-600 hover:text-slate-900 transition-colors">
+            <a
+              href="#billing"
+              className="text-slate-600 hover:text-slate-900 transition-colors"
+            >
               Billing
             </a>
-            <a href="#testimonials" className="text-slate-600 hover:text-slate-900 transition-colors">
+            <a
+              href="#testimonials"
+              className="text-slate-600 hover:text-slate-900 transition-colors"
+            >
               Testimonials
             </a>
-            <a href="#testimonials" className="text-slate-600 hover:text-slate-900 transition-colors">
-              Beta✦ 
+            <a
+              href="#testimonials"
+              className="text-slate-600 hover:text-slate-900 transition-colors"
+            >
+              Beta✦
             </a>
           </nav>
 
           {/* Right: Auth Buttons - Desktop Only */}
           <div className="hidden md:flex items-center justify-end gap-4 text-sm font-medium flex-1">
-            <Link href="/sign-in" className="text-slate-600 hover:text-slate-900 transition-colors">
+            <Link
+              href="/sign-in"
+              className="text-slate-600 hover:text-slate-900 transition-colors"
+            >
               Log in
             </Link>
-            <Link href="/sign-up" className="px-4 py-2 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition-colors">
+            <Link
+              href="/sign-up"
+              className="px-4 py-2 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition-colors"
+            >
               Sign up
             </Link>
           </div>
@@ -77,7 +111,10 @@ export default function LandingPage() {
         {/* Mobile Navigation Menu */}
         <motion.div
           initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: isMenuOpen ? 1 : 0, height: isMenuOpen ? "auto" : 0 }}
+          animate={{
+            opacity: isMenuOpen ? 1 : 0,
+            height: isMenuOpen ? "auto" : 0,
+          }}
           transition={{ duration: 0.3 }}
           className="md:hidden overflow-hidden border-t border-slate-200/80"
         >
@@ -178,7 +215,8 @@ export default function LandingPage() {
 
                 {/* Contrast */}
                 <p className="text-lg text-slate-600 leading-relaxed">
-                  It's designed to sound correct everywhere — and authentic nowhere.
+                  It's designed to sound correct everywhere — and authentic
+                  nowhere.
                 </p>
 
                 {/* Shift */}
@@ -188,13 +226,16 @@ export default function LandingPage() {
 
                 {/* Core explanation */}
                 <p className="text-lg text-slate-600 leading-relaxed">
-                  We built a model that understands how speech varies across regions — the cadence,
-                  the inflections, the cultural context behind every sentence.
+                  We built a model that understands how speech varies across
+                  regions — the cadence, the inflections, the cultural context
+                  behind every sentence.
                 </p>
 
                 {/* Proof / example */}
                 <p className="text-lg text-slate-600 leading-relaxed">
-                  From Hinglish in India to Russian and other regional nuances, Accent8 adapts to how people actually speak — not how models expect them to.
+                  From Hinglish in India to Russian and other regional nuances,
+                  Accent8 adapts to how people actually speak — not how models
+                  expect them to.
                 </p>
 
                 {/* Closing statement */}
@@ -209,25 +250,25 @@ export default function LandingPage() {
 
         {/* 4. FEATURES BENTO */}
         <div id="features" className="scroll-mt-24">
-        <BouncyCardsFeatures />
+          <BouncyCardsFeatures />
         </div>
 
         {/* 5. VOICE EXPERIMENTALS */}
-          
-          <section className="py-32 px-6">
-        <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-4 text-slate-900">
-              The Voice Lab
-            </h2>
-            <p className="text-xl text-slate-500 font-light">
-              Test our most popular personas raw.
-            </p>
-          </div>
 
-          <VoiceLab />
-        </div>
-      </section>
+        <section className="py-32 px-6">
+          <div className="container mx-auto max-w-5xl">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-4 text-slate-900">
+                The Voice Lab
+              </h2>
+              <p className="text-xl text-slate-500 font-light">
+                Test our most popular personas raw.
+              </p>
+            </div>
+
+            <VoiceLab />
+          </div>
+        </section>
 
         {/* 6. PRODUCT SHOWCASE */}
         {/* <section className="py-32 px-6 bg-[#0A0A0A] text-white rounded-[32px] mx-4 md:mx-8 shadow-xl relative overflow-hidden my-16 border border-slate-800">
@@ -265,16 +306,19 @@ export default function LandingPage() {
         {/* 8. TESTIMONIALS */}
         <TestimonialV2 />
         <section className="py-32 px-6">
-            <div className="container mx-auto max-w-5xl">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-4 text-slate-900">Beta Access</h2>
-                <p className="text-xl text-slate-500 font-light">
-                  Join our beta program to get early access to new features and voice options.
-                </p>
-              </div>
-              <WavyBackground />
+          <div className="container mx-auto max-w-5xl">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-4 text-slate-900">
+                Beta Access
+              </h2>
+              <p className="text-xl text-slate-500 font-light">
+                Join our beta program to get early access to new features and
+                voice options.
+              </p>
             </div>
-          </section>
+            <WavyBackground />
+          </div>
+        </section>
 
         {/* 9. UPDATES */}
         <section className="py-24 px-6 relative">
@@ -282,7 +326,6 @@ export default function LandingPage() {
             <h2 className="text-2xl font-bold mb-8">Changelog</h2>
 
             <div className="space-y-10 border-l-2 border-slate-200 pl-6 ml-4">
-
               {/* April 2026 */}
               <div className="relative">
                 <div className="absolute -left-8 top-1.5 h-3 w-3 rounded-full bg-slate-900 ring-4 ring-white" />
@@ -293,8 +336,9 @@ export default function LandingPage() {
                   Accent8 Core v1.0 — Regional Intelligence Layer
                 </h3>
                 <p className="text-slate-500 text-lg font-light">
-                  Introduced our accent-aware prompting and cadence modeling system. 
-                  Improved realism across Hinglish, Marathi, and mixed-language speech with better pacing and tone consistency.
+                  Introduced our accent-aware prompting and cadence modeling
+                  system. Improved realism across Hinglish, Marathi, and
+                  mixed-language speech with better pacing and tone consistency.
                 </p>
               </div>
 
@@ -308,7 +352,9 @@ export default function LandingPage() {
                   Real-time Inference Upgrade (−40ms latency)
                 </h3>
                 <p className="text-slate-500 text-lg font-light">
-                  Optimized streaming pipeline and batching. Enabled smoother real-time playback for voice agents and interactive applications.
+                  Optimized streaming pipeline and batching. Enabled smoother
+                  real-time playback for voice agents and interactive
+                  applications.
                 </p>
               </div>
 
@@ -322,7 +368,9 @@ export default function LandingPage() {
                   Zero-shot Voice Cloning (5s Input)
                 </h3>
                 <p className="text-slate-500 text-lg font-light">
-                  Added support for cloning voices from short reference clips. Improved speaker similarity and reduced artifacts in expressive speech.
+                  Added support for cloning voices from short reference clips.
+                  Improved speaker similarity and reduced artifacts in
+                  expressive speech.
                 </p>
               </div>
 
@@ -336,7 +384,8 @@ export default function LandingPage() {
                   Multilingual Expansion (Hindi, Marathi, English)
                 </h3>
                 <p className="text-slate-500 text-lg font-light">
-                  Introduced support for Indian languages with improved phoneme handling and early-stage code-switching capabilities.
+                  Introduced support for Indian languages with improved phoneme
+                  handling and early-stage code-switching capabilities.
                 </p>
               </div>
 
@@ -350,7 +399,8 @@ export default function LandingPage() {
                   Paralinguistic Prompting Support
                 </h3>
                 <p className="text-slate-500 text-lg font-light">
-                  Enabled expressive tags like [laugh], [breath], and [pause] to generate more human-like speech patterns.
+                  Enabled expressive tags like [laugh], [breath], and [pause] to
+                  generate more human-like speech patterns.
                 </p>
               </div>
 
@@ -364,10 +414,10 @@ export default function LandingPage() {
                   Accent8 Prototype Release
                 </h3>
                 <p className="text-slate-500 text-lg font-light">
-                  Initial release with baseline TTS capabilities and early experiments in regional cadence modeling.
+                  Initial release with baseline TTS capabilities and early
+                  experiments in regional cadence modeling.
                 </p>
               </div>
-
             </div>
           </div>
         </section>
@@ -377,10 +427,18 @@ export default function LandingPage() {
           <div className="mx-4 md:mx-8 rounded-[32px] bg-[#0A0A0A] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-xl border border-slate-800">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,calc(100%-100px),transparent)] from-white/3 to-transparent" />
             <div className="relative z-10 max-w-2xl mx-auto space-y-8">
-              <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-white">Ready to build with soul?</h2>
-              <p className="text-lg md:text-xl text-slate-300 font-light">Join 500+ creators building the next generation of Indian content.</p>
+              <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-white">
+                Ready to build with soul?
+              </h2>
+              <p className="text-lg md:text-xl text-slate-300 font-light">
+                Join 500+ creators building the next generation of Indian
+                content.
+              </p>
               <div className="pt-4">
-                <Link href="/sign-up" className="inline-block px-8 py-4 bg-white text-slate-900 rounded-full font-medium text-lg hover:bg-slate-100 transition-colors shadow-lg">
+                <Link
+                  href="/sign-up"
+                  className="inline-block px-8 py-4 bg-white text-slate-900 rounded-full font-medium text-lg hover:bg-slate-100 transition-colors shadow-lg"
+                >
                   Start Cloning Your Voice
                 </Link>
               </div>
@@ -391,14 +449,28 @@ export default function LandingPage() {
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
               <div>&copy; 2026 Accent8. All rights reserved.</div>
               <div className="flex gap-6">
-                <Link href="#" className="hover:text-slate-900 transition-colors">Twitter</Link>
-                <Link href="#" className="hover:text-slate-900 transition-colors">Discord</Link>
-                <Link href="#" className="hover:text-slate-900 transition-colors">GitHub</Link>
+                <Link
+                  href="#"
+                  className="hover:text-slate-900 transition-colors"
+                >
+                  Twitter
+                </Link>
+                <Link
+                  href="#"
+                  className="hover:text-slate-900 transition-colors"
+                >
+                  Discord
+                </Link>
+                <Link
+                  href="#"
+                  className="hover:text-slate-900 transition-colors"
+                >
+                  GitHub
+                </Link>
               </div>
             </div>
           </footer>
         </section>
-
       </main>
     </div>
   );
@@ -430,10 +502,13 @@ function SmoothScrollTTSHero() {
             <h1 className="text-3xl font-semibold tracking-tight text-white leading-tight">
               AI voices, minus the AI.
               <br />
-              <span className="text-white/75">Built for how we really speak.</span>
+              <span className="text-white/75">
+                Built for how we really speak.
+              </span>
             </h1>
             <p className="mx-auto mt-4 text-sm text-white/75">
-              Build expressive narration, ad reads, and conversational agents with regional cadence.
+              Build expressive narration, ad reads, and conversational agents
+              with regional cadence.
             </p>
             <div className="mt-6 flex items-center justify-center">
               <Link
@@ -447,7 +522,10 @@ function SmoothScrollTTSHero() {
         </div>
       </div>
 
-      <div style={{ height: `calc(${HERO_SCROLL_HEIGHT}px + 100vh)` }} className="relative hidden w-full md:block">
+      <div
+        style={{ height: `calc(${HERO_SCROLL_HEIGHT}px + 100vh)` }}
+        className="relative hidden w-full md:block"
+      >
         <CenterHeroImage />
         <HeroParallaxImages />
 
@@ -470,8 +548,8 @@ function SmoothScrollTTSHero() {
               <span className="text-white/70">Built for how we speak</span>
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-sm text-white/75 md:text-lg">
-              Build expressive narration, ad reads, and conversational agents with regional cadence,
-              emotion control, and low-latency APIs.
+              Build expressive narration, ad reads, and conversational agents
+              with regional cadence, emotion control, and low-latency APIs.
             </p>
             <div className="mt-7 flex items-center justify-center gap-3">
               <Link
@@ -497,7 +575,8 @@ function SmoothScrollTTSHero() {
               The Accent8 Dashboard
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-slate-300 md:text-lg">
-              A cinematic preview of the dashboard experience, presented inside a floating MacBook frame.
+              A cinematic preview of the dashboard experience, presented inside
+              a floating MacBook frame.
             </p>
           </div>
 
@@ -520,7 +599,12 @@ function SmoothScrollTTSHero() {
                 </span>
               }
               badge={
-                <Link href="https://peerlist.io/abhinavmanglore" target="_blank" rel="noreferrer" aria-label="Open Peerlist profile">
+                <Link
+                  href="https://peerlist.io/abhinavmanglore"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Peerlist profile"
+                >
                   <PeerlistBadge className="h-10 w-10 -rotate-12 transform rounded-full shadow-lg" />
                 </Link>
               }
@@ -541,8 +625,16 @@ function CenterHeroImage() {
   const clipB = useTransform(scrollY, [0, HERO_SCROLL_HEIGHT], [76, 100]);
   const clipPath = useMotionTemplate`polygon(${clipA}% ${clipA}%, ${clipB}% ${clipA}%, ${clipB}% ${clipB}%, ${clipA}% ${clipB}%)`;
 
-  const backgroundSize = useTransform(scrollY, [0, HERO_SCROLL_HEIGHT + 400], ["170%", "100%"]);
-  const opacity = useTransform(scrollY, [HERO_SCROLL_HEIGHT - 80, HERO_SCROLL_HEIGHT + 380], [1, 0]);
+  const backgroundSize = useTransform(
+    scrollY,
+    [0, HERO_SCROLL_HEIGHT + 400],
+    ["170%", "100%"],
+  );
+  const opacity = useTransform(
+    scrollY,
+    [HERO_SCROLL_HEIGHT - 80, HERO_SCROLL_HEIGHT + 380],
+    [1, 0],
+  );
 
   return (
     <motion.div
@@ -613,7 +705,13 @@ type ParallaxImageProps = {
   end: number;
 };
 
-function ParallaxImage({ className, alt, src, start, end }: ParallaxImageProps) {
+function ParallaxImage({
+  className,
+  alt,
+  src,
+  start,
+  end,
+}: ParallaxImageProps) {
   const ref = useRef<HTMLImageElement | null>(null);
 
   const { scrollYProgress } = useScroll({
@@ -640,22 +738,43 @@ function ParallaxImage({ className, alt, src, start, end }: ParallaxImageProps) 
 
 function TTSRolloutTimeline() {
   return (
-    <section className="mx-auto max-w-5xl px-6 py-28 text-white" id="tts-rollout">
+    <section
+      className="mx-auto max-w-5xl px-6 py-28 text-white"
+      id="tts-rollout"
+    >
       <motion.h2
         initial={{ y: 42, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ ease: "easeInOut", duration: 0.7 }}
         className="mb-16 text-3xl font-black uppercase tracking-wide text-white md:text-5xl"
-      >
-         
-      </motion.h2>
+      ></motion.h2>
 
-      <TimelineItem title="Expressive Hindi V3" date="May 2026" location="Bengaluru" />
-      <TimelineItem title="Marathi Prosody Pack" date="June 2026" location="Pune" />
-      <TimelineItem title="Code-Switch Engine" date="July 2026" location="Delhi" />
-      <TimelineItem title="Voice Cloning Studio" date="August 2026" location="Hyderabad" />
-      <TimelineItem title="Realtime Streaming API" date="September 2026" location="Mumbai" />
+      <TimelineItem
+        title="Expressive Hindi V3"
+        date="May 2026"
+        location="Bengaluru"
+      />
+      <TimelineItem
+        title="Marathi Prosody Pack"
+        date="June 2026"
+        location="Pune"
+      />
+      <TimelineItem
+        title="Code-Switch Engine"
+        date="July 2026"
+        location="Delhi"
+      />
+      <TimelineItem
+        title="Voice Cloning Studio"
+        date="August 2026"
+        location="Hyderabad"
+      />
+      <TimelineItem
+        title="Realtime Streaming API"
+        date="September 2026"
+        location="Mumbai"
+      />
     </section>
   );
 }
@@ -677,7 +796,9 @@ function TimelineItem({ title, date, location }: TimelineItemProps) {
     >
       <div>
         <p className="mb-1.5 text-lg text-white md:text-2xl">{title}</p>
-        <p className="text-xs uppercase tracking-wider text-white/55 md:text-sm">{date}</p>
+        <p className="text-xs uppercase tracking-wider text-white/55 md:text-sm">
+          {date}
+        </p>
       </div>
       <div className="flex items-center gap-1.5 text-xs uppercase tracking-wider text-white/55 md:text-sm">
         <p>{location}</p>
@@ -751,8 +872,14 @@ const pricingPlans: PricingPlan[] = [
     price: "Free",
     cadence: "/month",
     cta: "Start Free",
-    summary: "Perfect for testing voices, trying emotion tags, and shipping your first TTS experiences.",
-    features: ["10k chars/month", "5 standard voices", "Basic style controls", "Community support"],
+    summary:
+      "Perfect for testing voices, trying emotion tags, and shipping your first TTS experiences.",
+    features: [
+      "10k chars/month",
+      "5 standard voices",
+      "Basic style controls",
+      "Community support",
+    ],
   },
   {
     name: "Creator",
@@ -763,8 +890,14 @@ const pricingPlans: PricingPlan[] = [
     cadence: "/month",
     cta: "Start 14-Day Trial",
     featured: true,
-    summary: "Scale production with premium voices, faster synthesis, and richer controls for storytelling.",
-    features: ["200k chars/month", "Premium voices", "2 voice clones", "Priority API queue"],
+    summary:
+      "Scale production with premium voices, faster synthesis, and richer controls for storytelling.",
+    features: [
+      "200k chars/month",
+      "Premium voices",
+      "2 voice clones",
+      "Priority API queue",
+    ],
   },
   {
     name: "Scale",
@@ -774,8 +907,14 @@ const pricingPlans: PricingPlan[] = [
     price: "Custom",
     cadence: "/month",
     cta: "Book Strategy Call",
-    summary: "Enterprise-ready deployment with advanced observability, security controls, and dedicated onboarding.",
-    features: ["Unlimited volume", "Advanced analytics", "SLA and governance", "Dedicated support lead"],
+    summary:
+      "Enterprise-ready deployment with advanced observability, security controls, and dedicated onboarding.",
+    features: [
+      "Unlimited volume",
+      "Advanced analytics",
+      "SLA and governance",
+      "Dedicated support lead",
+    ],
   },
 ];
 
@@ -796,15 +935,21 @@ function PricingShowcase() {
       <div className="relative mx-auto w-full max-w-350">
         <div className="mb-12 flex flex-col items-start justify-between gap-8 lg:mb-16 lg:flex-row lg:items-end">
           <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-slate-600">Pricing</p>
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-slate-600">
+              Pricing
+            </p>
             <h2 className="text-4xl font-bold leading-tight tracking-tight text-slate-900 md:text-6xl lg:text-7xl">
               Built for teams that need expressive voice, not generic audio.
             </h2>
           </div>
 
           <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_12px_36px_rgba(15,23,42,0.08)]">
-            <p className="text-sm font-medium text-slate-700">Every plan includes onboarding, quality review, and production QA.</p>
-            <p className="mt-2 text-sm text-slate-500">Cancel anytime. No lock-in contracts.</p>
+            <p className="text-sm font-medium text-slate-700">
+              Every plan includes onboarding, quality review, and production QA.
+            </p>
+            <p className="mt-2 text-sm text-slate-500">
+              Cancel anytime. No lock-in contracts.
+            </p>
           </div>
         </div>
 
@@ -815,7 +960,9 @@ function PricingShowcase() {
               whileHover={{ y: -10, scale: 1.01 }}
               transition={{ type: "spring", stiffness: 220, damping: 20 }}
               className={`group relative overflow-hidden rounded-3xl border p-8 shadow-[0_14px_40px_rgba(15,23,42,0.08)] transition duration-300 hover:shadow-[0_22px_55px_rgba(15,23,42,0.14)] md:p-10 ${
-                plan.featured ? "border-slate-900 bg-slate-900 text-white" : "border-slate-200 bg-white"
+                plan.featured
+                  ? "border-slate-900 bg-slate-900 text-white"
+                  : "border-slate-200 bg-white"
               }`}
             >
               <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100">
@@ -834,28 +981,50 @@ function PricingShowcase() {
 
                   <p
                     className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] ${
-                      plan.featured ? "bg-white/15 text-white" : "bg-slate-100 text-slate-600"
+                      plan.featured
+                        ? "bg-white/15 text-white"
+                        : "bg-slate-100 text-slate-600"
                     }`}
                   >
                     {plan.tagline}
                   </p>
 
-                  <h3 className="mt-4 text-3xl font-bold md:text-4xl">{plan.name}</h3>
+                  <h3 className="mt-4 text-3xl font-bold md:text-4xl">
+                    {plan.name}
+                  </h3>
 
                   <div className="mt-6 flex items-end gap-2">
-                    <span className="text-5xl font-bold md:text-6xl">{plan.price}</span>
-                    <span className={`mb-2 text-sm ${plan.featured ? "text-white/70" : "text-slate-500"}`}>
+                    <span className="text-5xl font-bold md:text-6xl">
+                      {plan.price}
+                    </span>
+                    <span
+                      className={`mb-2 text-sm ${plan.featured ? "text-white/70" : "text-slate-500"}`}
+                    >
                       {plan.cadence}
                     </span>
                   </div>
 
-                  <p className={`mt-5 ${plan.featured ? "text-white/80" : "text-slate-600"}`}>{plan.summary}</p>
+                  <p
+                    className={`mt-5 ${plan.featured ? "text-white/80" : "text-slate-600"}`}
+                  >
+                    {plan.summary}
+                  </p>
                 </div>
 
-                <ul className={`mb-8 space-y-3 border-t pt-6 ${plan.featured ? "border-white/15" : "border-slate-200"}`}>
+                <ul
+                  className={`mb-8 space-y-3 border-t pt-6 ${plan.featured ? "border-white/15" : "border-slate-200"}`}
+                >
                   {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3 text-sm md:text-base">
-                      <Check size={18} className={plan.featured ? "text-white" : "text-slate-700"} />
+                    <li
+                      key={feature}
+                      className="flex items-center gap-3 text-sm md:text-base"
+                    >
+                      <Check
+                        size={18}
+                        className={
+                          plan.featured ? "text-white" : "text-slate-700"
+                        }
+                      />
                       {feature}
                     </li>
                   ))}
@@ -878,8 +1047,12 @@ function PricingShowcase() {
 
         <div className="mt-10 overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-[0_24px_60px_rgba(0,0,0,0.25)]">
           <div className="border-b border-white/10 px-6 py-5 md:px-8">
-            <h4 className="text-2xl font-bold text-white md:text-3xl">Plan Comparison</h4>
-            <p className="text-white/65">Everything you need to choose the right growth cadence.</p>
+            <h4 className="text-2xl font-bold text-white md:text-3xl">
+              Plan Comparison
+            </h4>
+            <p className="text-white/65">
+              Everything you need to choose the right growth cadence.
+            </p>
           </div>
 
           <div className="overflow-x-auto">
@@ -896,7 +1069,9 @@ function PricingShowcase() {
               <tbody>
                 {pricingMatrixRows.map((row, i) => (
                   <tr key={row.label} className={i % 2 ? "bg-white/3" : ""}>
-                    <td className="px-6 py-4 text-white md:px-8">{row.label}</td>
+                    <td className="px-6 py-4 text-white md:px-8">
+                      {row.label}
+                    </td>
 
                     {row.values.map((value, idx) => (
                       <td key={idx} className="px-6 py-4">

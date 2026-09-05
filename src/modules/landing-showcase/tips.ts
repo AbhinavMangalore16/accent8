@@ -1,4 +1,10 @@
-export type TipIcon = "mic2" | "languages" | "zap" | "audioLines" | "heart" | "sliders";
+export type TipIcon =
+  | "mic2"
+  | "languages"
+  | "zap"
+  | "audioLines"
+  | "heart"
+  | "sliders";
 
 export type VoiceOption = {
   id: string;
@@ -26,7 +32,8 @@ export type Tip = {
 const encode = (text: string) => `/tts?text=${encodeURIComponent(text)}`;
 
 // TODO: Replace with your actual Cloudflare R2 Public Dev URL
-const CLOUDFLARE_BASE_URL = "https://pub-5e0f53d1a24847fe8df5271fce9c70c6.r2.dev";
+const CLOUDFLARE_BASE_URL =
+  "https://pub-5e0f53d1a24847fe8df5271fce9c70c6.r2.dev";
 
 // Note: Replace `{}` in animationData with your actual gradient imports (e.g., gradientManim)
 export const tips: Tip[] = [
@@ -37,11 +44,18 @@ export const tips: Tip[] = [
     icon: "mic2",
     gradient: "from-[#FFD700] to-[#FFA500]",
     text: "Experience the next level of vocal fidelity.",
-    animationData: {}, 
+    animationData: {},
     tags: ["Premium", "Warm"],
     tier: "premium",
     href: encode("Experience the next level of vocal fidelity."),
-    voices: [{ id: "p_anaya", name: "Anaya", label: "Anaya (Premium)", previewUrl: `/audio/premium/_Anaya.wav` }],
+    voices: [
+      {
+        id: "p_anaya",
+        name: "Anaya",
+        label: "Anaya (Premium)",
+        previewUrl: `/audio/premium/_Anaya.wav`,
+      },
+    ],
   },
   {
     title: "Archer",
@@ -53,7 +67,14 @@ export const tips: Tip[] = [
     tags: ["Premium", "Deep"],
     tier: "premium",
     href: encode("Command attention with every word."),
-    voices: [{ id: "p_archer", name: "Archer", label: "Archer (Premium)", previewUrl: `/audio/premium/_Archer.wav` }],
+    voices: [
+      {
+        id: "p_archer",
+        name: "Archer",
+        label: "Archer (Premium)",
+        previewUrl: `/audio/premium/_Archer.wav`,
+      },
+    ],
   },
   {
     title: "Ivan",
@@ -65,7 +86,14 @@ export const tips: Tip[] = [
     tags: ["Premium", "Corporate"],
     tier: "premium",
     href: encode("Perfect for high-end professional narration."),
-    voices: [{ id: "p_ivan", name: "Ivan", label: "Ivan (Premium)", previewUrl: `/audio/premium/Ivan.wav` }],
+    voices: [
+      {
+        id: "p_ivan",
+        name: "Ivan",
+        label: "Ivan (Premium)",
+        previewUrl: `/audio/premium/Ivan.wav`,
+      },
+    ],
   },
   {
     title: "Kylie",
@@ -77,7 +105,14 @@ export const tips: Tip[] = [
     tags: ["Premium", "Energetic"],
     tier: "premium",
     href: encode("Bring your brand to life with vibrant energy."),
-    voices: [{ id: "p_kylie", name: "Kylie", label: "Kylie (Premium)", previewUrl: `/audio/premium/Kylie.wav` }],
+    voices: [
+      {
+        id: "p_kylie",
+        name: "Kylie",
+        label: "Kylie (Premium)",
+        previewUrl: `/audio/premium/Kylie.wav`,
+      },
+    ],
   },
   {
     title: "Lucy",
@@ -89,7 +124,14 @@ export const tips: Tip[] = [
     tags: ["Premium", "Empathetic"],
     tier: "premium",
     href: encode("Let your audience feel truly heard."),
-    voices: [{ id: "p_lucy", name: "Lucy", label: "Lucy (Premium)", previewUrl: `/audio/premium/Lucy.wav` }],
+    voices: [
+      {
+        id: "p_lucy",
+        name: "Lucy",
+        label: "Lucy (Premium)",
+        previewUrl: `/audio/premium/Lucy.wav`,
+      },
+    ],
   },
 
   // --- BASIC VOICES ---
@@ -102,8 +144,17 @@ export const tips: Tip[] = [
     animationData: {},
     tags: ["Basic", "Audiobook"],
     tier: "basic",
-    href: encode("Once upon a time, in a quiet village, there lived a dreamer."),
-    voices: [{ id: "b_adrian", name: "Adrian", label: "Adrian (Basic)", previewUrl: `/audio/basic/Adrian.wav` }],
+    href: encode(
+      "Once upon a time, in a quiet village, there lived a dreamer.",
+    ),
+    voices: [
+      {
+        id: "b_adrian",
+        name: "Adrian",
+        label: "Adrian (Basic)",
+        previewUrl: `/audio/basic/Adrian.wav`,
+      },
+    ],
   },
   {
     title: "Brianna",
@@ -114,8 +165,17 @@ export const tips: Tip[] = [
     animationData: {},
     tags: ["Basic", "Advertising"],
     tier: "basic",
-    href: encode("Introducing Gamut AI — fast, natural, and starting at just ₹1/min."),
-    voices: [{ id: "b_brianna", name: "Brianna", label: "Brianna (Basic)", previewUrl: `/audio/basic/Brianna.wav` }],
+    href: encode(
+      "Introducing Gamut AI — fast, natural, and starting at just ₹1/min.",
+    ),
+    voices: [
+      {
+        id: "b_brianna",
+        name: "Brianna",
+        label: "Brianna (Basic)",
+        previewUrl: `/audio/basic/Brianna.wav`,
+      },
+    ],
   },
   {
     title: "Carrigan",
@@ -127,7 +187,14 @@ export const tips: Tip[] = [
     tags: ["Basic", "Character"],
     tier: "basic",
     href: encode("I can't believe this! This is incredible news!"),
-    voices: [{ id: "b_carrigan", name: "Carrigan", label: "Carrigan (Basic)", previewUrl: `/audio/basic/Carrigan.wav` }],
+    voices: [
+      {
+        id: "b_carrigan",
+        name: "Carrigan",
+        label: "Carrigan (Basic)",
+        previewUrl: `/audio/basic/Carrigan.wav`,
+      },
+    ],
   },
   {
     title: "Emmanuel",
@@ -139,7 +206,14 @@ export const tips: Tip[] = [
     tags: ["Basic", "Dynamic"],
     tier: "basic",
     href: encode("Let me tell you a secret about the universe."),
-    voices: [{ id: "b_emmanuel", name: "Emmanuel", label: "Emmanuel (Basic)", previewUrl: `/audio/basic/Emmanuel.wav` }],
+    voices: [
+      {
+        id: "b_emmanuel",
+        name: "Emmanuel",
+        label: "Emmanuel (Basic)",
+        previewUrl: `/audio/basic/Emmanuel.wav`,
+      },
+    ],
   },
   {
     title: "Jessica",
@@ -151,7 +225,14 @@ export const tips: Tip[] = [
     tags: ["Basic", "Calm"],
     tier: "basic",
     href: encode("Take a deep breath in... and slowly exhale."),
-    voices: [{ id: "b_jessica", name: "Jessica", label: "Jessica (Basic)", previewUrl: `/audio/basic/Jessica.wav` }],
+    voices: [
+      {
+        id: "b_jessica",
+        name: "Jessica",
+        label: "Jessica (Basic)",
+        previewUrl: `/audio/basic/Jessica.wav`,
+      },
+    ],
   },
   {
     title: "Miles",
@@ -163,7 +244,14 @@ export const tips: Tip[] = [
     tags: ["Basic", "Support"],
     tier: "basic",
     href: encode("Hello, thank you for calling. How can I assist you today?"),
-    voices: [{ id: "b_miles", name: "Miles", label: "Miles (Basic)", previewUrl: `/audio/basic/Miles.wav` }],
+    voices: [
+      {
+        id: "b_miles",
+        name: "Miles",
+        label: "Miles (Basic)",
+        previewUrl: `/audio/basic/Miles.wav`,
+      },
+    ],
   },
   {
     title: "Ross",
@@ -175,7 +263,14 @@ export const tips: Tip[] = [
     tags: ["Basic", "Host"],
     tier: "basic",
     href: encode("Welcome back to the show. Today, we're diving deep into AI."),
-    voices: [{ id: "b_ross", name: "Ross", label: "Ross (Basic)", previewUrl: `/audio/basic/Ross.wav` }],
+    voices: [
+      {
+        id: "b_ross",
+        name: "Ross",
+        label: "Ross (Basic)",
+        previewUrl: `/audio/basic/Ross.wav`,
+      },
+    ],
   },
 
   // --- SHOWCASE VOICES ---
@@ -190,7 +285,14 @@ export const tips: Tip[] = [
     tier: "showcase",
     isProfane: true, // Triggers the alert
     href: encode("Warning: This sample contains raw and unfiltered language."),
-    voices: [{ id: "s_madison", name: "Madison", label: "Madison (Showcase)", previewUrl: `/audio/showcase/__Madison.wav` }],
+    voices: [
+      {
+        id: "s_madison",
+        name: "Madison",
+        label: "Madison (Showcase)",
+        previewUrl: `/audio/showcase/__Madison.wav`,
+      },
+    ],
   },
   {
     title: "Ross (Showcase)",
@@ -202,7 +304,14 @@ export const tips: Tip[] = [
     tags: ["Showcase", "Podcast"],
     tier: "showcase",
     href: encode("A deeper look into advanced vocal generation."),
-    voices: [{ id: "s_ross", name: "__Ross", label: "Ross (Showcase)", previewUrl: `/audio/showcase/__Ross.wav` }],
+    voices: [
+      {
+        id: "s_ross",
+        name: "__Ross",
+        label: "Ross (Showcase)",
+        previewUrl: `/audio/showcase/__Ross.wav`,
+      },
+    ],
   },
   {
     title: "Daniel",
@@ -214,7 +323,14 @@ export const tips: Tip[] = [
     tags: ["Showcase", "Educational"],
     tier: "showcase",
     href: encode("Let's explore the science behind this phenomenon."),
-    voices: [{ id: "s_daniel", name: "Daniel", label: "Daniel (Showcase)", previewUrl: `/audio/showcase/Daniel.wav` }],
+    voices: [
+      {
+        id: "s_daniel",
+        name: "Daniel",
+        label: "Daniel (Showcase)",
+        previewUrl: `/audio/showcase/Daniel.wav`,
+      },
+    ],
   },
   {
     title: "Edward",
@@ -226,7 +342,14 @@ export const tips: Tip[] = [
     tags: ["Showcase", "Refined"],
     tier: "showcase",
     href: encode("A voice that carries the weight of history."),
-    voices: [{ id: "s_edward", name: "Edward", label: "Edward (Showcase)", previewUrl: `/audio/showcase/Edward.wav` }],
+    voices: [
+      {
+        id: "s_edward",
+        name: "Edward",
+        label: "Edward (Showcase)",
+        previewUrl: `/audio/showcase/Edward.wav`,
+      },
+    ],
   },
   {
     title: "Ingrid",
@@ -238,7 +361,14 @@ export const tips: Tip[] = [
     tags: ["Showcase", "Inviting"],
     tier: "showcase",
     href: encode("Come in, sit down, and make yourself at home."),
-    voices: [{ id: "s_ingrid", name: "Ingrid", label: "Ingrid (Showcase)", previewUrl: `/audio/showcase/Ingrid.wav` }],
+    voices: [
+      {
+        id: "s_ingrid",
+        name: "Ingrid",
+        label: "Ingrid (Showcase)",
+        previewUrl: `/audio/showcase/Ingrid.wav`,
+      },
+    ],
   },
   {
     title: "John",
@@ -250,7 +380,14 @@ export const tips: Tip[] = [
     tags: ["Showcase", "Conversational"],
     tier: "showcase",
     href: encode("Hey there! It's great to finally meet you."),
-    voices: [{ id: "s_john", name: "John", label: "John (Showcase)", previewUrl: `/audio/showcase/John.wav` }],
+    voices: [
+      {
+        id: "s_john",
+        name: "John",
+        label: "John (Showcase)",
+        previewUrl: `/audio/showcase/John.wav`,
+      },
+    ],
   },
   {
     title: "Noah",
@@ -262,6 +399,13 @@ export const tips: Tip[] = [
     tags: ["Showcase", "Tech"],
     tier: "showcase",
     href: encode("Welcome to the future of digital interaction."),
-    voices: [{ id: "s_noah", name: "Noah", label: "Noah (Showcase)", previewUrl: `/audio/showcase/Noah.wav` }],
+    voices: [
+      {
+        id: "s_noah",
+        name: "Noah",
+        label: "Noah (Showcase)",
+        previewUrl: `/audio/showcase/Noah.wav`,
+      },
+    ],
   },
 ];

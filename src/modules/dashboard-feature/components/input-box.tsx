@@ -19,7 +19,7 @@ export function InputBox() {
   const handleSubmit = () => {
     const trimmed = text.trim();
     if (!trimmed) return;
-    router.push(`/tts?text=${encodeURIComponent(trimmed)}`);
+    router.push(`/dashboard/tts-feature?text=${encodeURIComponent(trimmed)}`);
   };
   return (
     <div className="rounded-[22px] bg-linear-185 from-[#f5d0fe] from-15% via-[#22d3ee] via-39% to-[#c4b5fd] to-85% p-0.5 shadow-[0_0_0_2px_white]">
@@ -33,28 +33,30 @@ export function InputBox() {
             maxLength={MAX_LIMIT_FREE}
           />
           <div className="flex items-center justify-between pt-2">
-  
             {/* LEFT → Characters (subtle) */}
             <span className="text-xs text-muted-foreground">
-                {text.length.toLocaleString()}/{MAX_LIMIT_FREE.toLocaleString()} characters used
+              {text.length.toLocaleString()}/{MAX_LIMIT_FREE.toLocaleString()}{" "}
+              characters used
             </span>
 
             {/* RIGHT → Cost (highlighted badge) */}
             <Badge
-                variant="secondary"
-                className="flex items-center gap-1.5 px-2 py-1 text-xs font-medium"
+              variant="secondary"
+              className="flex items-center gap-1.5 px-2 py-1 text-xs font-medium"
             >
-                <Coins className="h-3.5 w-3.5 text-yellow-500" />
-                ₹{cost}
+              <Coins className="h-3.5 w-3.5 text-yellow-500" />₹{cost}
             </Badge>
-            </div>
+          </div>
         </div>
         <div className="flex items-center justify-end p-3">
-
-            <Button size="sm" disabled={!text.trim()} onClick={handleSubmit} className="w-full lg:w-auto">
-                Generate Audio
-            </Button>
-
+          <Button
+            size="sm"
+            disabled={!text.trim()}
+            onClick={handleSubmit}
+            className="w-full lg:w-auto"
+          >
+            Generate Audio
+          </Button>
         </div>
       </div>
     </div>

@@ -1,9 +1,11 @@
-import { SignIn } from '@clerk/nextjs'
+import { SignIn } from "@clerk/nextjs";
 
 export default function Page() {
   return (
-    <div className='flex min-h-screen items-center justify-center bg-background'>
-        <SignIn appearance={{elements: {rootBox:"mx-auto", card: "shadow-lg"}}}/>
+    <div className="flex min-h-screen items-center justify-center bg-background">
+      <SignIn
+        appearance={{ elements: { rootBox: "mx-auto", card: "shadow-lg" } }}
+      />
     </div>
-  )
+  );
 }

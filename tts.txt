@@ -1,0 +1,2 @@
+cd accent8-tts
+.venv\Scripts\python.exe local_server.py

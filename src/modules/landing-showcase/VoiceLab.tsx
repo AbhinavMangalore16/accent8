@@ -27,28 +27,28 @@ export default function VoiceLab() {
     if (!audioRef.current) return;
 
     const playLogic = () => {
-        if (playingId === id) {
+      if (playingId === id) {
         audioRef.current!.pause();
         audioRef.current!.currentTime = 0;
         setPlayingId(null);
         return;
-        }
+      }
 
-        audioRef.current!.pause();
-        audioRef.current!.currentTime = 0;
+      audioRef.current!.pause();
+      audioRef.current!.currentTime = 0;
 
-        audioRef.current!.src = url;
-        audioRef.current!.play().catch(console.error);
+      audioRef.current!.src = url;
+      audioRef.current!.play().catch(console.error);
 
-        setPlayingId(id);
+      setPlayingId(id);
     };
 
     if (isProfane) {
-        requestAccess(playLogic);
+      requestAccess(playLogic);
     } else {
-        playLogic();
+      playLogic();
     }
-    };
+  };
 
   // Group tips by their tier
   const premiumTips = tips.filter((t) => t.tier === "premium");
@@ -71,7 +71,7 @@ export default function VoiceLab() {
                   ⚠️ Profane
                 </div>
               )}
-              
+
               <TipCard
                 title={tip.title}
                 description={tip.description}
@@ -81,7 +81,9 @@ export default function VoiceLab() {
                 animationData={tip.animationData}
                 isPlaying={playingId === voice.id}
                 canPlay={!!voice.previewUrl}
-                onTogglePlay={() => handlePlay(voice.id, voice.previewUrl, !!tip.isProfane)}
+                onTogglePlay={() =>
+                  handlePlay(voice.id, voice.previewUrl, !!tip.isProfane)
+                }
               />
             </div>
           );
@@ -95,7 +97,6 @@ export default function VoiceLab() {
       {/* Persistent audio element */}
       <audio ref={audioRef} preload="none" />
 
-      
       {renderVoiceSection("Basic Voices", basicTips)}
       {renderVoiceSection("Showcase Series", showcaseTips)}
       {renderVoiceSection("Premium Voices", premiumTips)}

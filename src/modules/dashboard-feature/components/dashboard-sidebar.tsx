@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import {
-    Sidebar,
+  Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
@@ -73,7 +73,10 @@ export function NavigationSection({
                     hover:shadow-sm transition-all"
                 >
                   {item.url ? (
-                    <Link href={item.url} className="flex items-center gap-2 w-full">
+                    <Link
+                      href={item.url}
+                      className="flex items-center gap-2 w-full"
+                    >
                       <item.icon className="w-4 h-4" />
                       <span>{item.title}</span>
                     </Link>
@@ -114,10 +117,12 @@ export function DashboardSidebar() {
     },
     {
       title: "Clone your voice",
+      url: "/dashboard/voices",
       icon: AudioWaveform,
     },
     {
       title: "Multi-turn Convo",
+      url: "/dashboard/convo",
       icon: MessagesSquare,
     },
   ];
@@ -132,7 +137,7 @@ export function DashboardSidebar() {
       url: "mailto:abhinavm16104@gmail.com",
       icon: Headphones,
     },
-        {
+    {
       title: "Usage & Billing",
       url: "mailto:abhinavm16104@gmail.com",
       icon: CreditCard,
@@ -148,44 +153,44 @@ export function DashboardSidebar() {
   return (
     <Sidebar collapsible="icon" className="flex flex-col h-full">
       <SidebarHeader className="flex flex-col gap-4 pt-6 px-3 items-center">
-        <Link 
-          href="/dashboard" 
+        <Link
+          href="/dashboard"
           className="flex justify-center w-full transition-opacity hover:opacity-80
                     group-data-[collapsible=icon]:w-auto"
         >
-          <Image 
-            src="/logo/accent8-text-logo.png" 
-            alt="Accent8"  
-            width={200} 
-            height={140} 
+          <Image
+            src="/logo/accent8-text-logo.png"
+            alt="Accent8"
+            width={200}
+            height={140}
             className="object-contain -translate-x-2.5 group-data-[collapsible=icon]:translate-x-0"
           />
         </Link>
-            <SidebarMenu>
-                <SidebarMenuItem className="group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:items-center group-data-[collapsible=icon]:justify-center">
-                    <OrganizationSwitcher
-                    hidePersonal
-                    fallback={
-                    <div className="flex items-center gap-2 h-9 px-2 
+        <SidebarMenu>
+          <SidebarMenuItem className="group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:items-center group-data-[collapsible=icon]:justify-center">
+            <OrganizationSwitcher
+              hidePersonal
+              fallback={
+                <div
+                  className="flex items-center gap-2 h-9 px-2 
                                     border border-border rounded-md
                                     group-data-[collapsible=icon]:justify-center 
-                                    group-data-[collapsible=icon]:px-0">
+                                    group-data-[collapsible=icon]:px-0"
+                >
+                  {/* Avatar */}
+                  <div className="size-6 rounded-sm bg-muted animate-pulse" />
 
-                        {/* Avatar */}
-                        <div className="size-6 rounded-sm bg-muted animate-pulse" />
-
-                        {/* Text */}
-                        <div className="flex flex-col gap-1 group-data-[collapsible=icon]:hidden">
-                        <div className="h-2 w-20 bg-muted rounded animate-pulse" />
-                        <div className="h-2 w-12 bg-muted/70 rounded animate-pulse" />
-                        </div>
-                    </div>
-                    }
-                    appearance={{
-                        elements:{
-                            rootBox:
-                            "w-full! flex items-center justify-center",
-                            organizationSwitcherTrigger: `
+                  {/* Text */}
+                  <div className="flex flex-col gap-1 group-data-[collapsible=icon]:hidden">
+                    <div className="h-2 w-20 bg-muted rounded animate-pulse" />
+                    <div className="h-2 w-12 bg-muted/70 rounded animate-pulse" />
+                  </div>
+                </div>
+              }
+              appearance={{
+                elements: {
+                  rootBox: "w-full! flex items-center justify-center",
+                  organizationSwitcherTrigger: `
                             w-full! justify-between! bg-transparent! border! border-border! rounded-md! pl-1.5! pr-2! py-1! gap-3!
                             group-data-[collapsible=icon]:w-8!
                             group-data-[collapsible=icon]:h-8!
@@ -193,53 +198,63 @@ export function DashboardSidebar() {
                             group-data-[collapsible=icon]:justify-center!
                             group-data-[collapsible=icon]:mx-auto!
                             `,
-                            organizationPreview: "gap-2 group-data-[collapsible=icon]:m-0",
-                            organizationPreviewAvatarBox: "size-6 rounded-sm group-data-[collapsible=icon]:m-0!",
-                            organizationPreviewTextContainer: "text-xs! tracking-tight! font-medium! text-foreground! group-data-[collapsible=icon]:hidden!",
-                            organizationPreviewMainIdentifier: "text-[13px]!",
-                            organizationSwitcherTriggerIcon: "size-4! text-sidebar-foreground! group-data-[collapsible=icon]:hidden!",
-                        }
-                    }}
-                    />
-                </SidebarMenuItem>
-            </SidebarMenu>
-            </SidebarHeader>
+                  organizationPreview:
+                    "gap-2 group-data-[collapsible=icon]:m-0",
+                  organizationPreviewAvatarBox:
+                    "size-6 rounded-sm group-data-[collapsible=icon]:m-0!",
+                  organizationPreviewTextContainer:
+                    "text-xs! tracking-tight! font-medium! text-foreground! group-data-[collapsible=icon]:hidden!",
+                  organizationPreviewMainIdentifier: "text-[13px]!",
+                  organizationSwitcherTriggerIcon:
+                    "size-4! text-sidebar-foreground! group-data-[collapsible=icon]:hidden!",
+                },
+              }}
+            />
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarHeader>
 
-            <SidebarContent>
-              <NavigationSection items={navigationItems} activeUrl={activeUrl} />
-              <NavigationSection label="Others" items={miscItem} activeUrl={activeUrl} />
-            </SidebarContent>
+      <SidebarContent>
+        <NavigationSection items={navigationItems} activeUrl={activeUrl} />
+        <NavigationSection
+          label="Others"
+          items={miscItem}
+          activeUrl={activeUrl}
+        />
+      </SidebarContent>
 
-                <SidebarFooter className="gap-3 py-3">
-                    <SidebarMenu>
-                        <SidebarMenuItem>
-                            <UserButton 
-                                    showName
-                                    fallback={
-                            <div className="flex items-center gap-2 h-9 px-2 
+      <SidebarFooter className="gap-3 py-3">
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <UserButton
+              showName
+              fallback={
+                <div
+                  className="flex items-center gap-2 h-9 px-2 
                                             border border-border rounded-md
                                             group-data-[collapsible=icon]:justify-center 
-                                            group-data-[collapsible=icon]:px-0">
+                                            group-data-[collapsible=icon]:px-0"
+                >
+                  {/* Avatar */}
+                  <div className="size-6 rounded-sm bg-muted animate-pulse" />
 
-                                {/* Avatar */}
-                                <div className="size-6 rounded-sm bg-muted animate-pulse" />
-
-                                {/* Text */}
-                                <div className="flex flex-col gap-1 group-data-[collapsible=icon]:hidden">
-                                <div className="h-2 w-20 bg-muted rounded animate-pulse" />
-                                <div className="h-2 w-12 bg-muted/70 rounded animate-pulse" />
-                                </div>
-                            </div>
-                            }
-                            appearance={{
-                                    elements: {
-                                    avatarBox: "size-8",
-                                    userButtonBox:"flex-row-reverse! gap-1!"
-                                    }
-                                }}/>
-                        </SidebarMenuItem>
-                    </SidebarMenu>
-                </SidebarFooter>
+                  {/* Text */}
+                  <div className="flex flex-col gap-1 group-data-[collapsible=icon]:hidden">
+                    <div className="h-2 w-20 bg-muted rounded animate-pulse" />
+                    <div className="h-2 w-12 bg-muted/70 rounded animate-pulse" />
+                  </div>
+                </div>
+              }
+              appearance={{
+                elements: {
+                  avatarBox: "size-8",
+                  userButtonBox: "flex-row-reverse! gap-1!",
+                },
+              }}
+            />
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarFooter>
     </Sidebar>
-  )
+  );
 }

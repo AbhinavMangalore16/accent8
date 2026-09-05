@@ -25,8 +25,8 @@ export function TipCard({ title, description, iconName }: TipCardProps) {
         <div className="p-3 bg-slate-50 border border-slate-100 rounded-xl text-slate-900 shadow-sm">
           <IconRenderer name={iconName} className="w-6 h-6" />
         </div>
-        
-        <select 
+
+        <select
           className="text-xs bg-slate-50 border border-slate-200 rounded-full px-3 py-1 outline-none text-slate-700 cursor-pointer shadow-sm hover:border-slate-300 transition-colors"
           value={selectedVoice}
           onChange={(e) => setSelectedVoice(e.target.value)}
@@ -39,7 +39,9 @@ export function TipCard({ title, description, iconName }: TipCardProps) {
 
       <div>
         <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
-        <p className="text-sm text-slate-500 mt-1 line-clamp-3">{description}</p>
+        <p className="text-sm text-slate-500 mt-1 line-clamp-3">
+          {description}
+        </p>
       </div>
 
       <div className="mt-auto pt-4 flex items-center justify-between border-t border-slate-100">
@@ -55,14 +57,14 @@ export function TipCard({ title, description, iconName }: TipCardProps) {
               key={i}
               className="w-1 bg-slate-900 rounded-full"
               initial={{ height: "4px" }}
-              animate={{ 
-                height: isHovered ? ["4px", "16px", "4px"] : "4px" 
+              animate={{
+                height: isHovered ? ["4px", "16px", "4px"] : "4px",
               }}
               transition={{
                 duration: 0.5,
                 repeat: isHovered ? Infinity : 0,
                 delay: i * 0.1,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
             />
           ))}

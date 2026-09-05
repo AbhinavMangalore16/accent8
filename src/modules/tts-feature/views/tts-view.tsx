@@ -10,7 +10,11 @@ import { TTSAudioPreview } from "../components/tts-audio-preview";
 import { TTSSettingsSidebar } from "../components/tts-settings-sidebar";
 import { SlidersHorizontal } from "lucide-react";
 
-export function TTSView({ defaultValues }: { defaultValues?: Partial<TTSFormValues> }) {
+export function TTSView({
+  defaultValues,
+}: {
+  defaultValues?: Partial<TTSFormValues>;
+}) {
   return (
     <TTSFormProvider defaultValues={defaultValues}>
       <div className="flex h-full min-h-0 flex-col overflow-hidden bg-background">
@@ -33,10 +37,9 @@ export function TTSView({ defaultValues }: { defaultValues?: Partial<TTSFormValu
             </Sheet>
           </div>
         </div>
-        
+
         {/* Main Content Area - 3 Panel logical layout mapped to 2 columns on lg */}
         <div className="flex h-full min-h-0 w-full flex-1 flex-col gap-6 p-4 lg:flex-row lg:p-6">
-          
           {/* Left Column: Panel 1 (Input) & Panel 2 (Preview) */}
           <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-y-auto pb-1 pr-1 lg:w-2/3">
             <div className="min-h-100 flex-1">
@@ -46,12 +49,11 @@ export function TTSView({ defaultValues }: { defaultValues?: Partial<TTSFormValu
               <TTSAudioPreview />
             </div>
           </div>
-          
+
           {/* Right Column: Panel 3 (Settings) */}
           <div className="hidden h-150 w-full pb-1 lg:block lg:h-full lg:w-1/3">
             <TTSSettingsSidebar />
           </div>
-          
         </div>
       </div>
     </TTSFormProvider>

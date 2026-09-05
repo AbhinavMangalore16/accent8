@@ -5,12 +5,12 @@ import gradientManim4 from "../../../../public/animations/gradientManim4.json";
 import gradientManim5 from "../../../../public/animations/gradientManim5.json";
 
 export type TipIcon =
-  | "bookOpen"      
-  | "megaphone"     
-  | "heart"       
-  | "audioLines"      
-  | "languages"        
-  | "podcast";      
+  | "bookOpen"
+  | "megaphone"
+  | "heart"
+  | "audioLines"
+  | "languages"
+  | "podcast";
 
 export type VoiceOption = {
   id: string;
@@ -34,7 +34,8 @@ export type Tip = {
 const encode = (text: string) => `/tts?text=${encodeURIComponent(text)}`;
 
 // TODO: Replace with your actual Cloudflare R2 Public Dev URL
-const CLOUDFLARE_BASE_URL = "https://pub-5e0f53d1a24847fe8df5271fce9c70c6.r2.dev";
+const CLOUDFLARE_BASE_URL =
+  "https://pub-5e0f53d1a24847fe8df5271fce9c70c6.r2.dev";
 
 export const tips: Tip[] = [
   {
@@ -47,7 +48,12 @@ export const tips: Tip[] = [
     tags: ["Audiobook", "Warm", "Narrator"],
     href: "/dashboard/tts-feature?text=Once%20upon%20a%20time%2C%20in%20a%20quiet%20village%2C%20there%20lived%20a%20dreamer%20who%20believed%20in%20magic.",
     voices: [
-      { id: "v1", name: "Adrian", label: "Adrian (Audiobook)", previewUrl: `/audio/basic/Adrian.wav` }
+      {
+        id: "v1",
+        name: "Adrian",
+        label: "Adrian (Audiobook)",
+        previewUrl: `/audio/basic/Adrian.wav`,
+      },
     ],
   },
   {
@@ -60,7 +66,12 @@ export const tips: Tip[] = [
     tags: ["Advertising", "Bold", "Clear"],
     href: "/dashboard/tts-feature?text=Introducing%20Gamut%20AI%20—%20fast,%20natural,%20and%20starting%20at%20just%20₹1/min.",
     voices: [
-      { id: "v2", name: "Brianna", label: "Brianna (Corporate)", previewUrl: `/audio/basic/Brianna.wav` }
+      {
+        id: "v2",
+        name: "Brianna",
+        label: "Brianna (Corporate)",
+        previewUrl: `/audio/basic/Brianna.wav`,
+      },
     ],
   },
   {
@@ -73,8 +84,18 @@ export const tips: Tip[] = [
     tags: ["Character", "Dynamic", "Fun"],
     href: "/dashboard/tts-feature?text=I%20can't%20believe%20this!%20This%20is%20the%20most%20incredible%20news%20I've%20ever%20heard!",
     voices: [
-      { id: "v3", name: "Carrigan", label: "Carrigan (Scottish)", previewUrl: `/audio/basic/Carrigan.wav` },
-      { id: "v4", name: "Emmanuel", label: "Emmanuel (Quirky)", previewUrl: `/audio/basic/Emmanuel.wav` }
+      {
+        id: "v3",
+        name: "Carrigan",
+        label: "Carrigan (Scottish)",
+        previewUrl: `/audio/basic/Carrigan.wav`,
+      },
+      {
+        id: "v4",
+        name: "Emmanuel",
+        label: "Emmanuel (Quirky)",
+        previewUrl: `/audio/basic/Emmanuel.wav`,
+      },
     ],
   },
   {
@@ -87,7 +108,12 @@ export const tips: Tip[] = [
     tags: ["Calm", "Soft", "Zen"],
     href: "/dashboard/tts-feature?text=Take%20a%20deep%20breath%20in...%20and%20slowly%20exhale.%20Let%20your%20mind%20drift%20into%20peace.",
     voices: [
-      { id: "v5", name: "Jessica", label: "Jessica (Soothing)", previewUrl: `/audio/basic/Jessica.wav` }
+      {
+        id: "v5",
+        name: "Jessica",
+        label: "Jessica (Soothing)",
+        previewUrl: `/audio/basic/Jessica.wav`,
+      },
     ],
   },
   {
@@ -100,7 +126,12 @@ export const tips: Tip[] = [
     tags: ["Support", "Friendly", "Clear"],
     href: "/dashboard/tts-feature?text=Hello,%20thank%20you%20for%20calling.%20How%20can%20I%20assist%20you%20today?",
     voices: [
-      { id: "v6", name: "Miles", label: "Miles (Professional)", previewUrl: `/audio/basic/Miles.wav` }
+      {
+        id: "v6",
+        name: "Miles",
+        label: "Miles (Professional)",
+        previewUrl: `/audio/basic/Miles.wav`,
+      },
     ],
   },
   {
@@ -113,7 +144,12 @@ export const tips: Tip[] = [
     tags: ["Host", "Confident", "General"],
     href: "/dashboard/tts-feature?text=Welcome%20back%20to%20the%20show.%20Today,%20we're%20diving%20deep%20into%20the%20future%20of%20AI.",
     voices: [
-      { id: "v7", name: "Ross", label: "Ross (Versatile)", previewUrl: `/audio/basic/Ross.wav` }
+      {
+        id: "v7",
+        name: "Ross",
+        label: "Ross (Versatile)",
+        previewUrl: `/audio/basic/Ross.wav`,
+      },
     ],
   },
 ];
