@@ -10,7 +10,7 @@ import {
   Settings,
   Play,
   HeartPulse,
-  Code
+  Code,
 } from "lucide-react";
 
 export const ICON_MAP = {
@@ -23,12 +23,18 @@ export const ICON_MAP = {
   Settings,
   Play,
   HeartPulse,
-  Code
+  Code,
 } as const;
 
 export type IconName = keyof typeof ICON_MAP;
 
-export function IconRenderer({ name, className }: { name: IconName; className?: string }) {
+export function IconRenderer({
+  name,
+  className,
+}: {
+  name: IconName;
+  className?: string;
+}) {
   const Icon = ICON_MAP[name];
   if (!Icon) return null;
   return <Icon className={className} />;

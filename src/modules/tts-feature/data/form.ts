@@ -19,14 +19,17 @@ export const defaultTTSValues = {
 
 export type TTSFormValues = typeof defaultTTSValues;
 
-const settingsSchema = sliders.reduce((shape, slider) => {
-  shape[slider.id] = z
-    .number()
-    .min(slider.min, `${slider.label} must be at least ${slider.min}`)
-    .max(slider.max, `${slider.label} must be at most ${slider.max}`);
+const settingsSchema = sliders.reduce(
+  (shape, slider) => {
+    shape[slider.id] = z
+      .number()
+      .min(slider.min, `${slider.label} must be at least ${slider.min}`)
+      .max(slider.max, `${slider.label} must be at most ${slider.max}`);
 
-  return shape;
-}, {} as Record<TTSSettingId, z.ZodNumber>);
+    return shape;
+  },
+  {} as Record<TTSSettingId, z.ZodNumber>,
+);
 
 export const ttsFormSchema = z.object({
   text: z.string().trim().min(1, "Text is required"),

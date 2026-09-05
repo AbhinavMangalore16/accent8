@@ -14,7 +14,7 @@ export function SiteHeader({ title, className }: PageHeaderProps) {
     <header
       className={cn(
         "flex items-center justify-between border-b px-4 py-4 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60",
-        className
+        className,
       )}
     >
       {/* Left Section */}
@@ -27,7 +27,7 @@ export function SiteHeader({ title, className }: PageHeaderProps) {
 
       {/* Right Section */}
       <div className="flex items-center gap-2">
-        <Button  variant="outline" size="sm">
+        <Button variant="outline" size="sm">
           <Link
             href="mailto:abhinavm16104@gmail.com"
             className="flex items-center gap-2"
@@ -37,7 +37,7 @@ export function SiteHeader({ title, className }: PageHeaderProps) {
           </Link>
         </Button>
 
-        <Button  variant="outline" size="sm">
+        <Button variant="outline" size="sm">
           <Link
             href="mailto:abhinavm16104@gmail.com"
             className="flex items-center gap-2"

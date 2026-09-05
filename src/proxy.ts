@@ -1,7 +1,7 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
-// ✅ Added "/" to the array to make the landing page public
+//  Added "/" to the array to make the landing page public
 const isPublicRoute = createRouteMatcher(["/", "/sign-in(.*)", "/sign-up(.*)"]);
 const isOrgRoute = createRouteMatcher(["/orgs(.*)"]);
 
@@ -9,11 +9,11 @@ export default clerkMiddleware(async (auth, req) => {
   const { userId, orgId } = await auth();
   const { pathname } = req.nextUrl;
 
-  // ✅ allow audio files
+  //  allow audio files
   if (pathname.startsWith("/audio")) {
     return NextResponse.next();
   }
-  // ✅ Redirect logged-in users away from landing page
+  //  Redirect logged-in users away from landing page
   if (req.nextUrl.pathname === "/" && userId) {
     if (!orgId) {
       return NextResponse.redirect(new URL("/orgs", req.url));
@@ -46,7 +46,7 @@ export default clerkMiddleware(async (auth, req) => {
 
 export const config = {
   matcher: [
-    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest|wav|mp3|ogg)).*)',
-    '/(api|trpc)(.*)',
+    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest|wav|mp3|ogg)).*)",
+    "/(api|trpc)(.*)",
   ],
 };

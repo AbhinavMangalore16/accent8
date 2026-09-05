@@ -11,7 +11,10 @@ export function BouncyCardsFeatures() {
         <div className="mb-10 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <h2 className="max-w-2xl text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
             Features that matter
-            <span className="text-slate-400"> for voice products that scale</span>
+            <span className="text-slate-400">
+              {" "}
+              for voice products that scale
+            </span>
           </h2>
           <motion.a
             href="/sign-up"
@@ -25,7 +28,10 @@ export function BouncyCardsFeatures() {
 
         {/* Row 1 */}
         <div className="mb-4 grid grid-cols-12 gap-4">
-          <BounceCard className="col-span-12 md:col-span-4" accentClassName="from-sky-300 to-cyan-400">
+          <BounceCard
+            className="col-span-12 md:col-span-4"
+            accentClassName="from-sky-300 to-cyan-400"
+          >
             <CardTitle
               title="Regional cadence"
               subtitle="Generate speech that adapts to accents, dialects, and regional speaking styles."
@@ -37,7 +43,10 @@ export function BouncyCardsFeatures() {
             />
           </BounceCard>
 
-          <BounceCard className="col-span-12 md:col-span-8" accentClassName="from-amber-300 to-orange-400">
+          <BounceCard
+            className="col-span-12 md:col-span-8"
+            accentClassName="from-amber-300 to-orange-400"
+          >
             <CardTitle
               title="Emotion control"
               subtitle="Dial expressiveness from flat narration to dramatic performance with a single parameter."
@@ -52,7 +61,10 @@ export function BouncyCardsFeatures() {
 
         {/* Row 2 */}
         <div className="mb-4 grid grid-cols-12 gap-4">
-          <BounceCard className="col-span-12 md:col-span-8" accentClassName="from-emerald-300 to-green-500">
+          <BounceCard
+            className="col-span-12 md:col-span-8"
+            accentClassName="from-emerald-300 to-green-500"
+          >
             <CardTitle
               title="Low-latency API"
               subtitle="Streaming-ready inference built for real-time agents, assistants, and interactive apps."
@@ -64,7 +76,10 @@ export function BouncyCardsFeatures() {
             />
           </BounceCard>
 
-          <BounceCard className="col-span-12 md:col-span-4" accentClassName="from-rose-300 to-red-400">
+          <BounceCard
+            className="col-span-12 md:col-span-4"
+            accentClassName="from-rose-300 to-red-400"
+          >
             <CardTitle
               title="Voice cloning"
               subtitle="Clone voices from seconds of audio with zero-shot generation-no training required."
@@ -79,7 +94,10 @@ export function BouncyCardsFeatures() {
 
         {/* Row 3 (NEW) */}
         <div className="grid grid-cols-12 gap-4">
-          <BounceCard className="col-span-12 md:col-span-4" accentClassName="from-purple-300 to-indigo-400">
+          <BounceCard
+            className="col-span-12 md:col-span-4"
+            accentClassName="from-purple-300 to-indigo-400"
+          >
             <CardTitle
               title="Paralinguistic prompting"
               subtitle="Use tags like [laugh], [sigh], or [whisper] to generate natural human reactions."
@@ -91,7 +109,10 @@ export function BouncyCardsFeatures() {
             />
           </BounceCard>
 
-          <BounceCard className="col-span-12 md:col-span-4" accentClassName="from-zinc-300 to-gray-400">
+          <BounceCard
+            className="col-span-12 md:col-span-4"
+            accentClassName="from-zinc-300 to-gray-400"
+          >
             <CardTitle
               title="Built-in watermarking"
               subtitle="Every generated audio is traceable without affecting sound quality."
@@ -103,7 +124,10 @@ export function BouncyCardsFeatures() {
             />
           </BounceCard>
 
-          <BounceCard className="col-span-12 md:col-span-4" accentClassName="from-blue-300 to-indigo-500">
+          <BounceCard
+            className="col-span-12 md:col-span-4"
+            accentClassName="from-blue-300 to-indigo-500"
+          >
             <CardTitle
               title="High-performance model"
               subtitle="Optimized architecture delivering speed and quality for production workloads."

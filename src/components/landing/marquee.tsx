@@ -3,7 +3,14 @@
 import { motion } from "framer-motion";
 
 const TRUSTED_BY = [
-  "Unacademy", "PhysicsWallah", "BYJU'S", "UpGrad", "Groww", "Zerodha", "CRED", "Swiggy"
+  "Unacademy",
+  "PhysicsWallah",
+  "BYJU'S",
+  "UpGrad",
+  "Groww",
+  "Zerodha",
+  "CRED",
+  "Swiggy",
 ];
 
 export function Marquee() {
@@ -25,7 +32,10 @@ export function Marquee() {
         >
           {/* Duplicate for seamless infinite loop */}
           {[...TRUSTED_BY, ...TRUSTED_BY, ...TRUSTED_BY].map((brand, i) => (
-            <div key={i} className="text-2xl font-bold text-slate-800/20 tracking-tighter">
+            <div
+              key={i}
+              className="text-2xl font-bold text-slate-800/20 tracking-tighter"
+            >
               {brand}
             </div>
           ))}

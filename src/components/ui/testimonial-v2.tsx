@@ -13,55 +13,64 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     text: "Accent8 is the first TTS that actually sounds like our audience. The delivery feels natural — not forced like other models.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
     name: "Sofia Martinez",
     role: "Content Creator",
   },
   {
     text: "We replaced our entire voice stack with Accent8. Latency is insanely low, and the emotional control is something we couldn’t get elsewhere.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150",
     name: "Daniel Kim",
     role: "AI Engineer",
   },
   {
     text: "The voice cloning is scary good. 5 seconds of audio and it captured tone, pacing, and personality almost perfectly.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150",
     name: "Emily Carter",
     role: "Podcast Producer",
   },
   {
     text: "We tested it against other TTS tools — Accent8 just sounded more human. Especially for localized content.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150",
     name: "Luca Rossi",
     role: "Startup Founder",
   },
   {
     text: "Paralinguistic tags are a game changer. Adding [laugh] or [pause] makes scripts feel alive without manual editing.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150",
+    image:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150",
     name: "Amina Hassan",
     role: "Voice UX Designer",
   },
   {
     text: "Finally, a model that understands multilingual flow. Switching languages doesn’t break pronunciation anymore.",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150&h=150",
+    image:
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150&h=150",
     name: "Omar El-Sayed",
     role: "Product Manager",
   },
   {
     text: "Integration took minutes. The API is clean, fast, and actually developer-friendly — which is rare in AI tools.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150",
     name: "James Walker",
     role: "Full Stack Developer",
   },
   {
     text: "We use Accent8 for ads and reels — engagement went up because the voice finally matches our audience.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150",
+    image:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150",
     name: "Isabella Ferreira",
     role: "Growth Marketer",
   },
   {
     text: "It’s rare to see open-source-level flexibility with production-level quality. Accent8 hits that balance.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150&h=150",
+    image:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150&h=150",
     name: "Noah Thompson",
     role: "ML Engineer",
   },
@@ -175,7 +184,8 @@ function TestimonialsSection() {
             What our users say
           </h2>
           <p className="mt-5 max-w-sm text-center text-lg leading-relaxed text-neutral-500 transition-colors">
-            Discover how thousands of teams streamline their operations with our platform.
+            Discover how thousands of teams streamline their operations with our
+            platform.
           </p>
         </div>
 
@@ -185,8 +195,16 @@ function TestimonialsSection() {
           aria-label="Scrolling Testimonials"
         >
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
-          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
-          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
+          <TestimonialsColumn
+            testimonials={secondColumn}
+            className="hidden md:block"
+            duration={19}
+          />
+          <TestimonialsColumn
+            testimonials={thirdColumn}
+            className="hidden lg:block"
+            duration={17}
+          />
         </div>
       </motion.div>
     </section>

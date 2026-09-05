@@ -29,14 +29,10 @@ export default function RootLayout({
     <ClerkProvider>
       <TRPCReactProvider>
         <AgeGateProvider>
-      <html lang="en">
-        <body
-          className={`${inter.variable} antialiased`}
-        >
-          {children}
-        </body>
-      </html>
-      </AgeGateProvider>
+          <html lang="en">
+            <body className={`${inter.variable} antialiased`}>{children}</body>
+          </html>
+        </AgeGateProvider>
       </TRPCReactProvider>
     </ClerkProvider>
   );

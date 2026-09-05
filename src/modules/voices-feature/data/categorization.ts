@@ -1,4 +1,4 @@
-import { VoiceCategory } from "@/generated/prisma/enums";
+import type { VoiceCategory } from "@/generated/prisma/enums";
 
 export const VOICE_LABELS: Record<VoiceCategory, string> = {
   AUDIOBOOK: "Audiobook",
@@ -12,9 +12,7 @@ export const VOICE_LABELS: Record<VoiceCategory, string> = {
   PODCAST: "Podcast",
   ADVERTISING: "Advertising",
   VOICEOVER: "Voiceover",
-  CORPORATE: "Corporate"
-}
+  CORPORATE: "Corporate",
+};
 
-export const VOICE_CATEGORICES = Object.keys(
-    VOICE_LABELS,
-) as VoiceCategory[];
+export const VOICE_CATEGORICES = Object.keys(VOICE_LABELS) as VoiceCategory[];
